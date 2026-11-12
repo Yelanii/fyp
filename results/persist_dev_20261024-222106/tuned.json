@@ -1,0 +1,27 @@
+{
+ "b9_vrr": {
+  "name": "B9_vrr",
+  "params": {
+   "window": 30,
+   "reverify_k": 1
+  },
+  "dev_loss": 161.7495995370388
+ },
+ "b10_pb": {
+  "name": "B10_pbandit",
+  "params": {
+   "gamma": 0.98,
+   "check_rate": 0.5
+  },
+  "dev_loss": 182.36745370370446
+ },
+ "b11_btm": {
+  "name": "B11_btm",
+  "params": {
+   "n_off": 20.0,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "dev_loss": 214.30000000000004
+ }
+}

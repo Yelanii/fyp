@@ -1,0 +1,11 @@
+{
+ "pairs": 1260,
+ "p_all": 7.42933033804018e-126,
+ "mean_relative_difference": -0.08269081599696923,
+ "conditions_won": 54,
+ "conditions": 63,
+ "p_per_seed": 9.5367431640625e-07,
+ "rule_mean_total_loss": 149.40108796296343,
+ "cusum_mean_total_loss": 163.51900132275136,
+ "decision": "CONFIRMED"
+}

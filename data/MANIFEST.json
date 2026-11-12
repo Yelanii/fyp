@@ -1,0 +1,70 @@
+{
+ "data/raw/GSM8K_LICENSE.txt": {
+  "sha256": "86bbb73e855821d7c401912fd4bf82e34313e6e3b6fd6f909f2b6cc9e209a53b",
+  "bytes": 1062
+ },
+ "data/raw/GSM8K_SOURCE.txt": {
+  "sha256": "60a1460d856182804534fde2eb12203bd1885c5eeffc1c71db42978a0b7e49b7",
+  "bytes": 150
+ },
+ "data/raw/gsm8k_test.jsonl": {
+  "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "bytes": 749738
+ },
+ "data/processed/core2_tuned.json": {
+  "sha256": "a12ad8cf42df9e06abe50ad1760c413d976eee6d4b1797a0952ed521a3429151",
+  "bytes": 203
+ },
+ "data/processed/core2_tuned_round1.json": {
+  "sha256": "9255da06e2b0e7462ca94a4d3537f9f4821363012a99c498776a3ddc0604023a",
+  "bytes": 201
+ },
+ "data/processed/costbench_routes.json": {
+  "sha256": "7d07f3a748003321ed0c9d6d3f9ef48ea7782916812bc1f3acf3c3216003e9ec",
+  "bytes": 94833
+ },
+ "data/processed/freshqa_judge_llama3.1_8b_plain.json": {
+  "sha256": "f15a9cd1d8665e1f9dae270567441deb144d30092ff3331cf369544c501ffeb8",
+  "bytes": 117120
+ },
+ "data/processed/freshqa_judge_phi4-mini_plain.json": {
+  "sha256": "3f504ace49d1998073dd832819aa464bf413f9d46a4ab3d49e738129f1ecbd9c",
+  "bytes": 117214
+ },
+ "data/processed/freshqa_judge_qwen2.5_1.5b.json": {
+  "sha256": "de27c4edd9559a24b6a551c973e1b4454e7bb7dfb565d49bac4e3cea9d423eba",
+  "bytes": 116135
+ },
+ "data/processed/freshqa_judge_qwen2.5_3b.json": {
+  "sha256": "c65572a6e475476f77753c525b1331d70fc042bb4fb986f119075300bd36cb4a",
+  "bytes": 116067
+ },
+ "data/processed/freshqa_judge_stub.json": {
+  "sha256": "02d22ca317d7a0f578a144e556b62e6b34148efbbe9afa1aa381e94a742ea7f9",
+  "bytes": 113084
+ },
+ "data/processed/freshqa_judge_stub_plain.json": {
+  "sha256": "c3af08314cdfb6f380e75a667822da09320faf69d12853a9c1e0439192688ab7",
+  "bytes": 113114
+ },
+ "data/processed/freshqa_staleness.json": {
+  "sha256": "986ecfec108a647ffdd7c438207450c2d7658d41ca96acb307928299e91e53a9",
+  "bytes": 161767
+ },
+ "data/processed/gsm8k_plans_qwen2.5_1.5b.json": {
+  "sha256": "336c00845f85cc7edb8d2e9722ce72239591d82bc27fd81b78275c4d8e75eafe",
+  "bytes": 25005
+ },
+ "data/processed/judge_calibration_qwen2.5_1.5b.json": {
+  "sha256": "70f329837da5f0e67aee4edc87a4929a3b17f31abeb8edb1ea22edaedfd664d4",
+  "bytes": 647
+ },
+ "data/processed/llm_cache_qwen2.5_1.5b.json": {
+  "sha256": "d03390f4b4858757ac11d5374c3a3dc15cfe98cd1aa8a9fc04e93ba3678415f3",
+  "bytes": 313650
+ },
+ "data/processed/llm_cache_qwen2.5_3b.json": {
+  "sha256": "a5850eb714a306c09ed76e70093d28e38bdfe2a19b381798f01bddd27d62f5f3",
+  "bytes": 221986
+ }
+}

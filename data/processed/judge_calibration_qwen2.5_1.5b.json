@@ -1,0 +1,27 @@
+{
+ "model": "qwen2.5:1.5b",
+ "n_expressions": 161,
+ "judges": {
+  "yesno": {
+   "catch_rate_obvious": 1.0,
+   "catch_rate_subtle": 1.0,
+   "false_alarm_rate": 0.937888198757764,
+   "valid": false
+  },
+  "recompute": {
+   "catch_rate_obvious": 0.9813664596273292,
+   "catch_rate_subtle": 0.9968944099378882,
+   "false_alarm_rate": 0.14285714285714285,
+   "valid": true
+  }
+ },
+ "gate": {
+  "max_false_alarm": 0.3,
+  "min_catch_obvious": 0.5
+ },
+ "judge": "recompute",
+ "note": "real LLM judge",
+ "catch_rate_obvious": 0.9813664596273292,
+ "catch_rate_subtle": 0.9968944099378882,
+ "false_alarm_rate": 0.14285714285714285
+}

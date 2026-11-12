@@ -1,0 +1,6 @@
+# Novelty demonstration summary
+
+- **C1 Real checkers repeat their false alarms:** SUPPORTED: after a false alarm the next check repeats it 76%-100% of the time, vs 0%-2% for a fresh false alarm. *Limit:* Two checkers from one family (Qwen2.5) on arithmetic steps.
+- **C2 Expecting repeated false alarms wins with real checkers:** SUPPORTED (pre-registered R-E3a and R-E3b met): v4 -6.1% at T = 0, -5.5% at T = 0.7; lower in 16/16 conditions and on every seed. *Limit:* One planner and checker family (Qwen2.5), GSM8K tasks; tool prices and degradation are simulated; gain is mostly where wrong answers are costly (leak 3).
+- **C3 The joint rule beats methods from the closest works:** SUPPORTED (pre-registered H-E6 confirmed): -13% vs VRR-Stop style; -17% vs ParetoBandit style; -17% vs Bench2Robust style. *Limit:* Simulation; the baselines are this project's adaptations of each paper's core idea (tuned on separate seeds), not their code.
+- **C4 Checking pays most at moderate degradation:** SUPPORTED (pre-registered H-FA1 confirmed): peak +23.3% at 80% success vs -8.3% at 95% and +8.8% at 60% (5% false alarms). *Limit:* Simulation; the effect is strong when wrong answers are costly (3 tasks) and small when they cost 1 task.

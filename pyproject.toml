@@ -1,0 +1,9 @@
+[project]
+name = "ereplan"
+version = "1.0.0"
+description = "e-Replan: cost-aware checking and switching for LLM tool-use agents under silent tool degradation (implementation and experiments, CPU only)"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0", "scipy>=1.13", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]

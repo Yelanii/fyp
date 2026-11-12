@@ -1,0 +1,224 @@
+{
+ "created": "20261021-142623",
+ "quick": false,
+ "rule_version": "v2",
+ "tune_seeds": [
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59
+ ],
+ "judge_seeds": [
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39
+ ],
+ "settings_sha256": "5157c6273f3e21461d0b8ae804ee11e16cf28dbee64f406db22f059756aa5197",
+ "settings": [
+  {
+   "check_frac": 0.15,
+   "lam": 0.0,
+   "leak_mult": 1.0,
+   "n_tasks": 120,
+   "prior_strength": 20.0,
+   "q_assumed": 0.5,
+   "q_true": 0.5,
+   "r_max": 2,
+   "rho": 0.5,
+   "steps_per_task": 5,
+   "switch_cost": 5.0,
+   "tools": [
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "A_cheap",
+     "price": 20.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "B_mid",
+     "price": 24.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.97,
+     "latency": 1.0,
+     "name": "C_premium",
+     "price": 30.0
+    }
+   ]
+  },
+  {
+   "check_frac": 0.3,
+   "lam": 0.0,
+   "leak_mult": 1.0,
+   "n_tasks": 120,
+   "prior_strength": 20.0,
+   "q_assumed": 0.5,
+   "q_true": 0.5,
+   "r_max": 2,
+   "rho": 0.5,
+   "steps_per_task": 5,
+   "switch_cost": 5.0,
+   "tools": [
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "A_cheap",
+     "price": 20.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "B_mid",
+     "price": 24.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.97,
+     "latency": 1.0,
+     "name": "C_premium",
+     "price": 30.0
+    }
+   ]
+  },
+  {
+   "check_frac": 0.15,
+   "lam": 0.0,
+   "leak_mult": 1.0,
+   "n_tasks": 120,
+   "prior_strength": 20.0,
+   "q_assumed": 0.8,
+   "q_true": 0.8,
+   "r_max": 2,
+   "rho": 0.5,
+   "steps_per_task": 5,
+   "switch_cost": 5.0,
+   "tools": [
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "A_cheap",
+     "price": 20.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "B_mid",
+     "price": 24.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.97,
+     "latency": 1.0,
+     "name": "C_premium",
+     "price": 30.0
+    }
+   ]
+  },
+  {
+   "check_frac": 0.3,
+   "lam": 0.0,
+   "leak_mult": 1.0,
+   "n_tasks": 120,
+   "prior_strength": 20.0,
+   "q_assumed": 0.8,
+   "q_true": 0.8,
+   "r_max": 2,
+   "rho": 0.5,
+   "steps_per_task": 5,
+   "switch_cost": 5.0,
+   "tools": [
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "A_cheap",
+     "price": 20.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.95,
+     "latency": 1.0,
+     "name": "B_mid",
+     "price": 24.0
+    },
+    {
+     "advertised_p": 0.95,
+     "base_p": 0.97,
+     "latency": 1.0,
+     "name": "C_premium",
+     "price": 30.0
+    }
+   ]
+  }
+ ],
+ "chosen": {
+  "Rule": {
+   "window": 60,
+   "epsilon": 0.02,
+   "k": 3,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "B1_always": {
+   "window": 30
+  },
+  "B2_never": {
+   "window": 30
+  },
+  "B3_fixed": {
+   "window": 30,
+   "rate": 0.2
+  },
+  "B4_cusum": {
+   "h": 6,
+   "p1": 0.8
+  },
+  "B8_fixed_est": {
+   "rate": 0.05
+  },
+  "B6_oracle": {},
+  "Rule_v1": {
+   "window": 30,
+   "epsilon": 0.02,
+   "k": 5
+  }
+ },
+ "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+ "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+ "processes": 2,
+ "numpy": "2.5.3",
+ "wall_seconds": 175.3,
+ "cpu_seconds_per_1000_tasks": 1.28
+}

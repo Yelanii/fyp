@@ -1,0 +1,351 @@
+[
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 30,
+   "epsilon": 0.02,
+   "k": 3,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 138.08004761526252
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 30,
+   "epsilon": 0.02,
+   "k": 5,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 138.05763211093478
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 30,
+   "epsilon": 0.05,
+   "k": 3,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 138.77336509667123
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 30,
+   "epsilon": 0.05,
+   "k": 5,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 138.6830042636829
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 60,
+   "epsilon": 0.02,
+   "k": 3,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 137.06904383855138
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 60,
+   "epsilon": 0.02,
+   "k": 5,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 137.06904383855138
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 60,
+   "epsilon": 0.05,
+   "k": 3,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 137.44094476088927
+ },
+ {
+  "strategy": "Rule",
+  "config": {
+   "window": 60,
+   "epsilon": 0.05,
+   "k": 5,
+   "horizon_mode": "session",
+   "session_cap": 50
+  },
+  "mean_cost_per_success": 137.44094476088927
+ },
+ {
+  "strategy": "B1_always",
+  "config": {
+   "window": 30
+  },
+  "mean_cost_per_success": 162.64051287084177
+ },
+ {
+  "strategy": "B1_always",
+  "config": {
+   "window": 60
+  },
+  "mean_cost_per_success": 165.16699480029928
+ },
+ {
+  "strategy": "B2_never",
+  "config": {
+   "window": 30
+  },
+  "mean_cost_per_success": 151.79012503753074
+ },
+ {
+  "strategy": "B2_never",
+  "config": {
+   "window": 60
+  },
+  "mean_cost_per_success": 153.9758093164665
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 30,
+   "rate": 0.05
+  },
+  "mean_cost_per_success": 152.3961799362854
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 30,
+   "rate": 0.1
+  },
+  "mean_cost_per_success": 153.08985270317984
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 30,
+   "rate": 0.2
+  },
+  "mean_cost_per_success": 151.8529247888243
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 30,
+   "rate": 0.3
+  },
+  "mean_cost_per_success": 153.3016704332579
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 60,
+   "rate": 0.05
+  },
+  "mean_cost_per_success": 153.5912893774568
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 60,
+   "rate": 0.1
+  },
+  "mean_cost_per_success": 154.6974204584426
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 60,
+   "rate": 0.2
+  },
+  "mean_cost_per_success": 156.00036004580184
+ },
+ {
+  "strategy": "B3_fixed",
+  "config": {
+   "window": 60,
+   "rate": 0.3
+  },
+  "mean_cost_per_success": 157.52025986061292
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 2,
+   "p1": 0.7
+  },
+  "mean_cost_per_success": 149.6035381859015
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 2,
+   "p1": 0.8
+  },
+  "mean_cost_per_success": 147.30217436371314
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 4,
+   "p1": 0.7
+  },
+  "mean_cost_per_success": 139.7967841787149
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 4,
+   "p1": 0.8
+  },
+  "mean_cost_per_success": 138.22411136787656
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 6,
+   "p1": 0.7
+  },
+  "mean_cost_per_success": 137.7015368657507
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 6,
+   "p1": 0.8
+  },
+  "mean_cost_per_success": 137.64071231514248
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 8,
+   "p1": 0.7
+  },
+  "mean_cost_per_success": 138.96536403383618
+ },
+ {
+  "strategy": "B4_cusum",
+  "config": {
+   "h": 8,
+   "p1": 0.8
+  },
+  "mean_cost_per_success": 138.4984061456192
+ },
+ {
+  "strategy": "B8_fixed_est",
+  "config": {
+   "rate": 0.05
+  },
+  "mean_cost_per_success": 190.7129227592876
+ },
+ {
+  "strategy": "B8_fixed_est",
+  "config": {
+   "rate": 0.1
+  },
+  "mean_cost_per_success": 191.21048664909003
+ },
+ {
+  "strategy": "B8_fixed_est",
+  "config": {
+   "rate": 0.2
+  },
+  "mean_cost_per_success": 193.61494079300292
+ },
+ {
+  "strategy": "B8_fixed_est",
+  "config": {
+   "rate": 0.3
+  },
+  "mean_cost_per_success": 194.56750649687012
+ },
+ {
+  "strategy": "B6_oracle",
+  "config": {},
+  "mean_cost_per_success": 138.22737094368318
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 30,
+   "epsilon": 0.02,
+   "k": 3
+  },
+  "mean_cost_per_success": 148.72711692821002
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 30,
+   "epsilon": 0.02,
+   "k": 5
+  },
+  "mean_cost_per_success": 148.705924056051
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 30,
+   "epsilon": 0.05,
+   "k": 3
+  },
+  "mean_cost_per_success": 149.2175053679057
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 30,
+   "epsilon": 0.05,
+   "k": 5
+  },
+  "mean_cost_per_success": 149.18837787363526
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 60,
+   "epsilon": 0.02,
+   "k": 3
+  },
+  "mean_cost_per_success": 151.14814014536051
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 60,
+   "epsilon": 0.02,
+   "k": 5
+  },
+  "mean_cost_per_success": 151.14521348757899
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 60,
+   "epsilon": 0.05,
+   "k": 3
+  },
+  "mean_cost_per_success": 151.61202632531882
+ },
+ {
+  "strategy": "Rule_v1",
+  "config": {
+   "window": 60,
+   "epsilon": 0.05,
+   "k": 5
+  },
+  "mean_cost_per_success": 151.61898877285196
+ }
+]

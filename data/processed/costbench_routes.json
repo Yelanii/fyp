@@ -1,0 +1,6040 @@
+{
+ "costbench_commit": "6424069f3f773ade076bcedbed302ed47cfb1837",
+ "refinement_level": 2,
+ "queries": [
+  {
+   "query_id": "<Query00005>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Decide_Location_Preference",
+     20.75
+    ],
+    [
+     "Location_Search_to_Step1",
+     44.13
+    ],
+    [
+     "Location_Refinement_Step2",
+     16.94
+    ],
+    [
+     "Select_Final_Location",
+     15.7
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     20.75
+    ],
+    [
+     "Location_Search_to_Step1",
+     44.13
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     32.73
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00006>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     87.52
+    ],
+    [
+     "Select_Final_Location",
+     19.54
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     40.79
+    ],
+    [
+     "Location_Finish_from_Step1_3Steps",
+     66.31
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00013>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     57.76
+    ],
+    [
+     "Location_Refinement_Step2",
+     22.52
+    ],
+    [
+     "Select_Final_Location",
+     17.0
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     40.85
+    ],
+    [
+     "Location_Finish_from_Step1_3Steps",
+     56.45
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00014>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     66.98
+    ],
+    [
+     "Select_Final_Location",
+     21.42
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     16.38
+    ],
+    [
+     "Search_Location_Candidates",
+     15.13
+    ],
+    [
+     "Location_Refinement_Step1",
+     18.04
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     39.06
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00017>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     78.26
+    ],
+    [
+     "Select_Final_Location",
+     21.16
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     31.14
+    ],
+    [
+     "Location_Refinement_Step1",
+     24.43
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     43.92
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00018>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     57.81
+    ],
+    [
+     "Location_Refinement_Step2",
+     21.2
+    ],
+    [
+     "Select_Final_Location",
+     21.18
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     57.81
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     42.4
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00022>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Preference_and_Search",
+     44.14
+    ],
+    [
+     "Location_Refinement_Step1",
+     18.45
+    ],
+    [
+     "Location_Refinement_Step2",
+     18.03
+    ],
+    [
+     "Select_Final_Location",
+     19.2
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     44.14
+    ],
+    [
+     "Location_Finish_from_Step1_3Steps",
+     55.75
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00034>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Decide_Location_Preference",
+     18.62
+    ],
+    [
+     "Location_Search_Planning_to_Step2",
+     58.03
+    ],
+    [
+     "Select_Final_Location",
+     23.69
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     55.14
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     45.22
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00037>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     61.54
+    ],
+    [
+     "Location_Refinement_Step2",
+     22.14
+    ],
+    [
+     "Select_Final_Location",
+     23.97
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     61.54
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     46.18
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00046>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     70.02
+    ],
+    [
+     "Select_Final_Location",
+     19.95
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     19.09
+    ],
+    [
+     "Location_Search_to_Step1",
+     35.83
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     35.09
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00049>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     76.59
+    ],
+    [
+     "Select_Final_Location",
+     23.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     39.94
+    ],
+    [
+     "Location_Finish_from_Step1_3Steps",
+     59.89
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00050>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     86.85
+    ],
+    [
+     "Select_Final_Location",
+     21.4
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Preference_and_Search",
+     46.8
+    ],
+    [
+     "Location_Refinement_Step1",
+     22.13
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     39.46
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00053>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Decide_Location_Preference",
+     24.69
+    ],
+    [
+     "Search_Location_Candidates",
+     17.56
+    ],
+    [
+     "Location_Refine_to_Step2",
+     38.48
+    ],
+    [
+     "Select_Final_Location",
+     17.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     24.69
+    ],
+    [
+     "Location_Search_to_Final_4Steps",
+     73.26
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00061>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     67.93
+    ],
+    [
+     "Select_Final_Location",
+     19.92
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     16.95
+    ],
+    [
+     "Location_Search_to_Final_4Steps",
+     71.03
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00067>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Preference_and_Search",
+     33.23
+    ],
+    [
+     "Location_Refine_to_Step2",
+     43.27
+    ],
+    [
+     "Select_Final_Location",
+     21.11
+    ]
+   ],
+   "without_X": [
+    [
+     "Location_Full_Planning_to_Step1",
+     57.58
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     40.09
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00084>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Decide_Location_Preference",
+     22.11
+    ],
+    [
+     "Location_Search_to_Step1",
+     39.26
+    ],
+    [
+     "Location_Refinement_Step2",
+     24.88
+    ],
+    [
+     "Select_Final_Location",
+     19.72
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     22.11
+    ],
+    [
+     "Location_Search_to_Step1",
+     39.26
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     44.66
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00115>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Decide_Location_Preference",
+     19.69
+    ],
+    [
+     "Search_Location_Candidates",
+     19.46
+    ],
+    [
+     "Location_Refine_to_Step2",
+     42.8
+    ],
+    [
+     "Select_Final_Location",
+     24.49
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     19.69
+    ],
+    [
+     "Search_Location_Candidates",
+     19.46
+    ],
+    [
+     "Location_Refinement_Step1",
+     19.73
+    ],
+    [
+     "Location_Finalize_from_Step2",
+     47.56
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00147>",
+   "task": "location",
+   "X": "Select_Final_Location",
+   "with_X": [
+    [
+     "Location_Full_Planning_to_Step2",
+     72.77
+    ],
+    [
+     "Select_Final_Location",
+     21.91
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Location_Preference",
+     16.11
+    ],
+    [
+     "Location_Search_to_Final_4Steps",
+     78.89
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00171>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.16
+    ],
+    [
+     "Search_Transportation_Candidates",
+     21.66
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     52.51
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     37.9
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     52.51
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00174>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     24.0
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     90.74
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step2",
+     94.39
+    ],
+    [
+     "Select_Final_Transportation",
+     20.35
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00177>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     15.77
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     51.4
+    ],
+    [
+     "Select_Final_Transportation",
+     23.14
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     48.86
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     41.52
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00178>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.26
+    ],
+    [
+     "Search_Transportation_Candidates",
+     24.01
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     56.1
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     42.39
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     56.1
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00179>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     22.75
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     67.19
+    ],
+    [
+     "Select_Final_Transportation",
+     18.86
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     45.73
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     44.27
+    ],
+    [
+     "Select_Final_Transportation",
+     18.86
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00180>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     15.23
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     83.72
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     56.95
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.05
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00182>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.5
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     64.35
+    ],
+    [
+     "Select_Final_Transportation",
+     16.53
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     59.81
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     21.27
+    ],
+    [
+     "Select_Final_Transportation",
+     16.53
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00183>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.02
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     59.44
+    ],
+    [
+     "Select_Final_Transportation",
+     24.7
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     58.56
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     18.98
+    ],
+    [
+     "Select_Final_Transportation",
+     24.7
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00185>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     20.39
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     84.76
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     41.38
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     43.65
+    ],
+    [
+     "Select_Final_Transportation",
+     20.23
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00186>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     22.65
+    ],
+    [
+     "Search_Transportation_Candidates",
+     22.8
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     18.84
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     46.74
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     45.49
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     18.84
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     46.74
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00187>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.27
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     83.1
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     39.44
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     24.45
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     35.96
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00192>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     21.05
+    ],
+    [
+     "Search_Transportation_Candidates",
+     23.14
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     63.91
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     44.25
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     63.91
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00193>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.22
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     53.55
+    ],
+    [
+     "Select_Final_Transportation",
+     16.43
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     59.26
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     34.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00194>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.34
+    ],
+    [
+     "Search_Transportation_Candidates",
+     17.36
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     15.41
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     39.64
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     56.16
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     39.64
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00196>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     17.01
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     38.26
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.01
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     33.5
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     21.79
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.01
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00198>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     20.57
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     80.53
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     63.16
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     18.42
+    ],
+    [
+     "Select_Final_Transportation",
+     19.85
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00203>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.57
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     88.54
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     61.31
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     47.16
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00207>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     17.57
+    ],
+    [
+     "Search_Transportation_Candidates",
+     15.76
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     44.64
+    ],
+    [
+     "Select_Final_Transportation",
+     19.23
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     33.36
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     44.64
+    ],
+    [
+     "Select_Final_Transportation",
+     19.23
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00211>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     21.31
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     38.36
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     21.18
+    ],
+    [
+     "Select_Final_Transportation",
+     22.44
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     60.09
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     21.18
+    ],
+    [
+     "Select_Final_Transportation",
+     22.44
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00213>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.68
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     36.15
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     33.17
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     36.08
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     18.82
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     33.17
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00219>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.63
+    ],
+    [
+     "Search_Transportation_Candidates",
+     20.69
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     61.8
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step2",
+     84.65
+    ],
+    [
+     "Select_Final_Transportation",
+     21.5
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00225>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     20.63
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     60.25
+    ],
+    [
+     "Select_Final_Transportation",
+     15.98
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     39.58
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     21.22
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     20.43
+    ],
+    [
+     "Select_Final_Transportation",
+     15.98
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00227>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.39
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     51.67
+    ],
+    [
+     "Select_Final_Transportation",
+     15.41
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step2",
+     71.11
+    ],
+    [
+     "Select_Final_Transportation",
+     15.41
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00232>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     15.74
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     82.44
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     31.97
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     66.4
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00236>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.02
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     57.2
+    ],
+    [
+     "Select_Final_Transportation",
+     18.02
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     42.39
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     50.9
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00237>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.81
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     34.5
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     20.1
+    ],
+    [
+     "Select_Final_Transportation",
+     19.09
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     54.32
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     20.1
+    ],
+    [
+     "Select_Final_Transportation",
+     19.09
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00240>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.27
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     71.01
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     36.95
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     33.52
+    ],
+    [
+     "Select_Final_Transportation",
+     18.87
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00245>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.11
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     35.87
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.33
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     35.73
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     19.26
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.33
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00247>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.88
+    ],
+    [
+     "Search_Transportation_Candidates",
+     18.19
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     36.36
+    ],
+    [
+     "Select_Final_Transportation",
+     23.32
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     38.16
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     36.36
+    ],
+    [
+     "Select_Final_Transportation",
+     23.32
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00248>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.51
+    ],
+    [
+     "Search_Transportation_Candidates",
+     22.09
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     41.23
+    ],
+    [
+     "Select_Final_Transportation",
+     18.47
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     40.65
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     41.23
+    ],
+    [
+     "Select_Final_Transportation",
+     18.47
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00249>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.31
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     77.31
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     38.89
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     18.48
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     20.81
+    ],
+    [
+     "Select_Final_Transportation",
+     22.69
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00251>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     24.36
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     78.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     58.51
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     44.49
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00255>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.83
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     61.62
+    ],
+    [
+     "Select_Final_Transportation",
+     22.45
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step2",
+     81.47
+    ],
+    [
+     "Select_Final_Transportation",
+     22.45
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00263>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     15.2
+    ],
+    [
+     "Search_Transportation_Candidates",
+     22.37
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     55.79
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     37.61
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     55.79
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00266>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     21.39
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     81.1
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     63.22
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     17.46
+    ],
+    [
+     "Select_Final_Transportation",
+     21.93
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00268>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     18.34
+    ],
+    [
+     "Search_Transportation_Candidates",
+     21.3
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     58.56
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     39.81
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     58.56
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00269>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.02
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     75.36
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     53.74
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     40.66
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00271>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     22.16
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     61.84
+    ],
+    [
+     "Select_Final_Transportation",
+     24.41
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     43.73
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     19.59
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     20.73
+    ],
+    [
+     "Select_Final_Transportation",
+     24.41
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00278>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     24.77
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     81.43
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     45.85
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     21.0
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     39.66
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00280>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.75
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     33.89
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     19.28
+    ],
+    [
+     "Select_Final_Transportation",
+     19.12
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     33.51
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     36.54
+    ],
+    [
+     "Select_Final_Transportation",
+     19.12
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00285>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.63
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     39.06
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     39.27
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     58.7
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     39.27
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00292>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.73
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     43.44
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     46.53
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     67.21
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     46.53
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00297>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     24.68
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     38.44
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     19.31
+    ],
+    [
+     "Select_Final_Transportation",
+     15.42
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     63.44
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     19.31
+    ],
+    [
+     "Select_Final_Transportation",
+     15.42
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00300>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     17.03
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     61.77
+    ],
+    [
+     "Select_Final_Transportation",
+     15.49
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     63.28
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     15.55
+    ],
+    [
+     "Select_Final_Transportation",
+     15.49
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00303>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     23.88
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     64.05
+    ],
+    [
+     "Select_Final_Transportation",
+     22.25
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step2",
+     88.09
+    ],
+    [
+     "Select_Final_Transportation",
+     22.25
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00306>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     22.36
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     57.15
+    ],
+    [
+     "Select_Final_Transportation",
+     21.91
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     44.63
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     35.07
+    ],
+    [
+     "Select_Final_Transportation",
+     21.91
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00314>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.33
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     42.45
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.17
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     58.95
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     42.17
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00315>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     16.09
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     51.9
+    ],
+    [
+     "Select_Final_Transportation",
+     23.71
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     34.77
+    ],
+    [
+     "Transportation_Refinement_Step1",
+     16.81
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     16.66
+    ],
+    [
+     "Select_Final_Transportation",
+     23.71
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00316>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     22.57
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     34.69
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     41.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     57.28
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     41.29
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00321>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     17.73
+    ],
+    [
+     "Transportation_Search_Planning_to_Step2",
+     65.06
+    ],
+    [
+     "Select_Final_Transportation",
+     17.81
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     41.24
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     59.44
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00324>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     20.12
+    ],
+    [
+     "Transportation_Search_to_Final_4Steps",
+     85.73
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     42.91
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     63.27
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00326>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     21.65
+    ],
+    [
+     "Search_Transportation_Candidates",
+     20.32
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     59.15
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     42.03
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     59.15
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00327>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     17.54
+    ],
+    [
+     "Transportation_Search_to_Step1",
+     34.57
+    ],
+    [
+     "Transportation_Finalize_from_Step2",
+     43.0
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Preference_and_Search",
+     34.82
+    ],
+    [
+     "Transportation_Refine_to_Step2",
+     41.07
+    ],
+    [
+     "Select_Final_Transportation",
+     19.27
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00331>",
+   "task": "transportation",
+   "X": "Decide_Transportation_Preference",
+   "with_X": [
+    [
+     "Decide_Transportation_Preference",
+     19.95
+    ],
+    [
+     "Search_Transportation_Candidates",
+     24.01
+    ],
+    [
+     "Transportation_Finish_from_Step1_3Steps",
+     47.93
+    ]
+   ],
+   "without_X": [
+    [
+     "Transportation_Full_Planning_to_Step1",
+     61.77
+    ],
+    [
+     "Transportation_Refinement_Step2",
+     15.05
+    ],
+    [
+     "Select_Final_Transportation",
+     15.22
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00337>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     19.68
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     43.18
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     17.36
+    ],
+    [
+     "Select_Final_Accommodation",
+     22.6
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     62.87
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     17.36
+    ],
+    [
+     "Select_Final_Accommodation",
+     22.6
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00347>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.45
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     64.39
+    ],
+    [
+     "Select_Final_Accommodation",
+     22.61
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     67.71
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     40.15
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00350>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     22.8
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     46.36
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     20.39
+    ],
+    [
+     "Select_Final_Accommodation",
+     22.07
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     69.17
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     20.39
+    ],
+    [
+     "Select_Final_Accommodation",
+     22.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00351>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.94
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     23.67
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     64.11
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     44.8
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     64.11
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00354>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     24.15
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     44.3
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     38.63
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     68.48
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     38.63
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00355>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.66
+    ],
+    [
+     "Accommodation_Search_to_Final_4Steps",
+     80.45
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     44.5
+    ],
+    [
+     "Accommodation_Refinement_Step1",
+     20.13
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     16.89
+    ],
+    [
+     "Select_Final_Accommodation",
+     19.85
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00367>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     16.15
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     39.37
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     34.95
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     31.31
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     59.44
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00368>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     22.73
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     31.83
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     19.52
+    ],
+    [
+     "Select_Final_Accommodation",
+     15.85
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     38.71
+    ],
+    [
+     "Accommodation_Refinement_Step1",
+     16.12
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     35.37
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00375>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.49
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     36.27
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     23.45
+    ],
+    [
+     "Select_Final_Accommodation",
+     24.1
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step2",
+     80.34
+    ],
+    [
+     "Select_Final_Accommodation",
+     24.1
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00378>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.59
+    ],
+    [
+     "Accommodation_Search_to_Final_4Steps",
+     79.79
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     40.76
+    ],
+    [
+     "Accommodation_Refine_to_Step2",
+     38.11
+    ],
+    [
+     "Select_Final_Accommodation",
+     21.53
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00385>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     22.61
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     57.9
+    ],
+    [
+     "Select_Final_Accommodation",
+     21.97
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step2",
+     80.91
+    ],
+    [
+     "Select_Final_Accommodation",
+     21.97
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00396>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     18.67
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     38.16
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     17.72
+    ],
+    [
+     "Select_Final_Accommodation",
+     21.83
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     38.68
+    ],
+    [
+     "Accommodation_Refine_to_Step2",
+     35.92
+    ],
+    [
+     "Select_Final_Accommodation",
+     21.83
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00401>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     21.52
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     21.81
+    ],
+    [
+     "Accommodation_Refine_to_Step2",
+     44.57
+    ],
+    [
+     "Select_Final_Accommodation",
+     23.56
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     63.95
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     47.67
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00403>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     15.01
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     61.46
+    ],
+    [
+     "Select_Final_Accommodation",
+     18.62
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step2",
+     76.51
+    ],
+    [
+     "Select_Final_Accommodation",
+     18.62
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00408>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     15.41
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     56.84
+    ],
+    [
+     "Select_Final_Accommodation",
+     15.43
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     33.49
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     54.34
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00409>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     21.02
+    ],
+    [
+     "Accommodation_Search_to_Final_4Steps",
+     70.8
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     37.78
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     54.38
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00425>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     17.44
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     69.22
+    ],
+    [
+     "Select_Final_Accommodation",
+     17.23
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     65.35
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     21.44
+    ],
+    [
+     "Select_Final_Accommodation",
+     17.23
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00430>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     24.45
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     19.0
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     65.05
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     43.46
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     65.05
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00437>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     17.86
+    ],
+    [
+     "Accommodation_Search_to_Final_4Steps",
+     81.75
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     37.6
+    ],
+    [
+     "Accommodation_Refine_to_Step2",
+     44.8
+    ],
+    [
+     "Select_Final_Accommodation",
+     17.34
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00452>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     18.17
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     22.53
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     56.35
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     40.88
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     56.35
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00465>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     16.22
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     60.79
+    ],
+    [
+     "Select_Final_Accommodation",
+     15.75
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     34.23
+    ],
+    [
+     "Accommodation_Refine_to_Step2",
+     42.86
+    ],
+    [
+     "Select_Final_Accommodation",
+     15.75
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00466>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     21.5
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     17.79
+    ],
+    [
+     "Accommodation_Refinement_Step1",
+     24.64
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     38.07
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     39.34
+    ],
+    [
+     "Accommodation_Refinement_Step1",
+     24.64
+    ],
+    [
+     "Accommodation_Finalize_from_Step2",
+     38.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00467>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.68
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     43.19
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     20.81
+    ],
+    [
+     "Select_Final_Accommodation",
+     24.47
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     63.88
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     20.81
+    ],
+    [
+     "Select_Final_Accommodation",
+     24.47
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00475>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     20.38
+    ],
+    [
+     "Search_Accommodation_Candidates",
+     22.26
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     65.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     42.76
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     65.13
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00479>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     15.03
+    ],
+    [
+     "Accommodation_Search_Planning_to_Step2",
+     65.87
+    ],
+    [
+     "Select_Final_Accommodation",
+     17.74
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step1",
+     60.29
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     20.83
+    ],
+    [
+     "Select_Final_Accommodation",
+     17.74
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00481>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     21.39
+    ],
+    [
+     "Accommodation_Search_to_Step1",
+     41.55
+    ],
+    [
+     "Accommodation_Refinement_Step2",
+     19.29
+    ],
+    [
+     "Select_Final_Accommodation",
+     24.93
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Preference_and_Search",
+     40.52
+    ],
+    [
+     "Accommodation_Finish_from_Step1_3Steps",
+     66.76
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00489>",
+   "task": "accommodation",
+   "X": "Decide_Accommodation_Preference",
+   "with_X": [
+    [
+     "Decide_Accommodation_Preference",
+     16.82
+    ],
+    [
+     "Accommodation_Search_to_Final_4Steps",
+     76.58
+    ]
+   ],
+   "without_X": [
+    [
+     "Accommodation_Full_Planning_to_Step2",
+     75.16
+    ],
+    [
+     "Select_Final_Accommodation",
+     18.28
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00508>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     23.09
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     32.62
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     33.84
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     39.74
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     16.11
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     33.84
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00520>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     15.68
+    ],
+    [
+     "Search_Attraction_Candidates",
+     17.21
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     65.04
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     32.98
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     65.04
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00525>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     19.6
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     39.75
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     43.89
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     42.85
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     60.4
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00528>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.64
+    ],
+    [
+     "Attraction_Search_to_Final_4Steps",
+     82.41
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     42.94
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     20.96
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     40.36
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00532>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     19.25
+    ],
+    [
+     "Attraction_Search_to_Final_4Steps",
+     85.35
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     86.09
+    ],
+    [
+     "Select_Final_Attraction",
+     18.52
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00539>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     19.94
+    ],
+    [
+     "Search_Attraction_Candidates",
+     22.56
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     62.88
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     42.55
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     62.88
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00555>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     18.62
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     64.04
+    ],
+    [
+     "Select_Final_Attraction",
+     22.1
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     82.87
+    ],
+    [
+     "Select_Final_Attraction",
+     22.1
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00556>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     24.5
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     32.15
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     37.61
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     40.34
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     16.35
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     37.61
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00565>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     20.31
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     39.08
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     45.22
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     42.89
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     16.8
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     45.22
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00576>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     15.63
+    ],
+    [
+     "Search_Attraction_Candidates",
+     19.58
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     66.09
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step1",
+     59.48
+    ],
+    [
+     "Attraction_Refinement_Step2",
+     19.9
+    ],
+    [
+     "Select_Final_Attraction",
+     22.0
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00577>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     18.86
+    ],
+    [
+     "Search_Attraction_Candidates",
+     23.91
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     22.54
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     44.84
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     42.79
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     22.54
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     44.84
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00579>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.7
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     52.06
+    ],
+    [
+     "Select_Final_Attraction",
+     15.47
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step1",
+     54.48
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     35.01
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00583>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     16.15
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     40.29
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     37.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     78.04
+    ],
+    [
+     "Select_Final_Attraction",
+     15.72
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00587>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     19.91
+    ],
+    [
+     "Search_Attraction_Candidates",
+     21.53
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     54.69
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     76.46
+    ],
+    [
+     "Select_Final_Attraction",
+     19.78
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00595>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     16.56
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     44.99
+    ],
+    [
+     "Attraction_Refinement_Step2",
+     23.88
+    ],
+    [
+     "Select_Final_Attraction",
+     23.2
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     38.7
+    ],
+    [
+     "Attraction_Refine_to_Step2",
+     47.11
+    ],
+    [
+     "Select_Final_Attraction",
+     23.2
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00597>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.25
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     56.81
+    ],
+    [
+     "Select_Final_Attraction",
+     22.12
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     37.06
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     63.26
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00603>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     20.6
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     56.78
+    ],
+    [
+     "Select_Final_Attraction",
+     18.03
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     77.47
+    ],
+    [
+     "Select_Final_Attraction",
+     18.03
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00624>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.63
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     63.76
+    ],
+    [
+     "Select_Final_Attraction",
+     18.66
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step1",
+     62.35
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     41.7
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00627>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.04
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     59.0
+    ],
+    [
+     "Select_Final_Attraction",
+     15.15
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step1",
+     62.62
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     32.74
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00628>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     23.0
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     46.37
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     39.79
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     44.58
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     24.84
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     39.79
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00634>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     24.9
+    ],
+    [
+     "Attraction_Search_to_Step1",
+     43.76
+    ],
+    [
+     "Attraction_Refinement_Step2",
+     21.24
+    ],
+    [
+     "Select_Final_Attraction",
+     23.64
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     46.06
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     67.63
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00637>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     20.11
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     67.38
+    ],
+    [
+     "Select_Final_Attraction",
+     16.9
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     87.65
+    ],
+    [
+     "Select_Final_Attraction",
+     16.9
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00641>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     20.65
+    ],
+    [
+     "Search_Attraction_Candidates",
+     19.27
+    ],
+    [
+     "Attraction_Refinement_Step1",
+     18.83
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     47.86
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step1",
+     58.92
+    ],
+    [
+     "Attraction_Finalize_from_Step2",
+     47.86
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00660>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     18.03
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     53.95
+    ],
+    [
+     "Select_Final_Attraction",
+     19.26
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Full_Planning_to_Step2",
+     72.26
+    ],
+    [
+     "Select_Final_Attraction",
+     19.26
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00662>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     21.13
+    ],
+    [
+     "Attraction_Search_to_Final_4Steps",
+     93.33
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     43.04
+    ],
+    [
+     "Attraction_Refine_to_Step2",
+     46.59
+    ],
+    [
+     "Select_Final_Attraction",
+     24.91
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00667>",
+   "task": "attraction",
+   "X": "Decide_Attraction_Preference",
+   "with_X": [
+    [
+     "Decide_Attraction_Preference",
+     24.05
+    ],
+    [
+     "Attraction_Search_Planning_to_Step2",
+     60.03
+    ],
+    [
+     "Select_Final_Attraction",
+     24.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Attraction_Preference_and_Search",
+     47.77
+    ],
+    [
+     "Attraction_Finish_from_Step1_3Steps",
+     60.49
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00676>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     20.29
+    ],
+    [
+     "Dining_Search_Planning_to_Step2",
+     56.81
+    ],
+    [
+     "Select_Final_Dining",
+     16.84
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     20.29
+    ],
+    [
+     "Search_Dining_Candidates",
+     22.15
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     51.57
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00677>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     18.19
+    ],
+    [
+     "Dining_Search_to_Step1",
+     34.38
+    ],
+    [
+     "Dining_Refinement_Step2",
+     15.25
+    ],
+    [
+     "Select_Final_Dining",
+     22.5
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     18.19
+    ],
+    [
+     "Dining_Search_to_Step1",
+     34.38
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     37.77
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00685>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     40.74
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     43.93
+    ],
+    [
+     "Select_Final_Dining",
+     19.33
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.95
+    ],
+    [
+     "Dining_Search_to_Final_4Steps",
+     81.24
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00687>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     35.51
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     39.75
+    ],
+    [
+     "Select_Final_Dining",
+     17.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     15.59
+    ],
+    [
+     "Dining_Search_to_Step1",
+     42.52
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     34.29
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00690>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     77.2
+    ],
+    [
+     "Select_Final_Dining",
+     15.61
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     15.38
+    ],
+    [
+     "Search_Dining_Candidates",
+     22.96
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     54.6
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00692>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     74.84
+    ],
+    [
+     "Select_Final_Dining",
+     18.37
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     19.2
+    ],
+    [
+     "Dining_Search_to_Final_4Steps",
+     74.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00695>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     66.91
+    ],
+    [
+     "Dining_Refinement_Step2",
+     18.89
+    ],
+    [
+     "Select_Final_Dining",
+     16.31
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     66.91
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     35.39
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00705>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     17.92
+    ],
+    [
+     "Dining_Search_to_Step1",
+     41.72
+    ],
+    [
+     "Dining_Refinement_Step2",
+     21.34
+    ],
+    [
+     "Select_Final_Dining",
+     17.15
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     17.92
+    ],
+    [
+     "Dining_Search_to_Step1",
+     41.72
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     38.58
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00706>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     24.19
+    ],
+    [
+     "Search_Dining_Candidates",
+     17.3
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     39.86
+    ],
+    [
+     "Select_Final_Dining",
+     22.41
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     24.19
+    ],
+    [
+     "Search_Dining_Candidates",
+     17.3
+    ],
+    [
+     "Dining_Refinement_Step1",
+     19.46
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     43.04
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00711>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     92.1
+    ],
+    [
+     "Select_Final_Dining",
+     15.88
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     48.44
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     59.79
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00715>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     22.68
+    ],
+    [
+     "Search_Dining_Candidates",
+     19.95
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     34.83
+    ],
+    [
+     "Select_Final_Dining",
+     24.75
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.68
+    ],
+    [
+     "Dining_Search_to_Step1",
+     38.68
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     40.85
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00726>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     82.46
+    ],
+    [
+     "Select_Final_Dining",
+     18.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     15.05
+    ],
+    [
+     "Dining_Search_to_Step1",
+     47.05
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     38.83
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00729>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     65.04
+    ],
+    [
+     "Dining_Refinement_Step2",
+     16.22
+    ],
+    [
+     "Select_Final_Dining",
+     18.67
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     65.04
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     35.04
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00734>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     16.72
+    ],
+    [
+     "Dining_Search_Planning_to_Step2",
+     63.36
+    ],
+    [
+     "Select_Final_Dining",
+     20.18
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     16.72
+    ],
+    [
+     "Dining_Search_to_Final_4Steps",
+     83.68
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00738>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     65.53
+    ],
+    [
+     "Dining_Refinement_Step2",
+     23.09
+    ],
+    [
+     "Select_Final_Dining",
+     21.33
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.5
+    ],
+    [
+     "Search_Dining_Candidates",
+     23.9
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     63.75
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00741>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     33.95
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     43.21
+    ],
+    [
+     "Select_Final_Dining",
+     22.86
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     57.12
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     43.03
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00743>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     23.78
+    ],
+    [
+     "Search_Dining_Candidates",
+     24.79
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     40.18
+    ],
+    [
+     "Select_Final_Dining",
+     16.56
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     69.39
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     36.04
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00747>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     34.14
+    ],
+    [
+     "Dining_Refinement_Step1",
+     17.39
+    ],
+    [
+     "Dining_Refinement_Step2",
+     21.09
+    ],
+    [
+     "Select_Final_Dining",
+     18.37
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     34.14
+    ],
+    [
+     "Dining_Refinement_Step1",
+     17.39
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     39.53
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00758>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     20.69
+    ],
+    [
+     "Dining_Search_Planning_to_Step2",
+     59.61
+    ],
+    [
+     "Select_Final_Dining",
+     23.81
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     20.69
+    ],
+    [
+     "Search_Dining_Candidates",
+     15.24
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     68.61
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00761>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     70.26
+    ],
+    [
+     "Select_Final_Dining",
+     23.77
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     17.0
+    ],
+    [
+     "Search_Dining_Candidates",
+     16.36
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     61.17
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00764>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     23.02
+    ],
+    [
+     "Dining_Search_to_Step1",
+     35.75
+    ],
+    [
+     "Dining_Refinement_Step2",
+     17.77
+    ],
+    [
+     "Select_Final_Dining",
+     18.42
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     23.02
+    ],
+    [
+     "Dining_Search_to_Step1",
+     35.75
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     36.5
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00775>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     22.03
+    ],
+    [
+     "Dining_Search_Planning_to_Step2",
+     64.43
+    ],
+    [
+     "Select_Final_Dining",
+     24.68
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.03
+    ],
+    [
+     "Dining_Search_to_Final_4Steps",
+     89.21
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00784>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     22.67
+    ],
+    [
+     "Dining_Search_to_Step1",
+     37.72
+    ],
+    [
+     "Dining_Refinement_Step2",
+     21.38
+    ],
+    [
+     "Select_Final_Dining",
+     16.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.67
+    ],
+    [
+     "Search_Dining_Candidates",
+     22.57
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     52.86
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00785>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     18.75
+    ],
+    [
+     "Dining_Search_to_Step1",
+     41.01
+    ],
+    [
+     "Dining_Refinement_Step2",
+     21.51
+    ],
+    [
+     "Select_Final_Dining",
+     23.29
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     18.75
+    ],
+    [
+     "Dining_Search_to_Step1",
+     41.01
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     45.14
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00786>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     39.71
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     44.25
+    ],
+    [
+     "Select_Final_Dining",
+     20.95
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     22.0
+    ],
+    [
+     "Dining_Search_to_Step1",
+     37.85
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     45.19
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00791>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Decide_Dining_Preference",
+     16.19
+    ],
+    [
+     "Dining_Search_Planning_to_Step2",
+     59.17
+    ],
+    [
+     "Select_Final_Dining",
+     19.68
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     16.19
+    ],
+    [
+     "Dining_Search_to_Step1",
+     41.33
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     37.88
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00798>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     58.96
+    ],
+    [
+     "Dining_Refinement_Step2",
+     23.66
+    ],
+    [
+     "Select_Final_Dining",
+     18.15
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     58.96
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     41.82
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00802>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     45.2
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     39.39
+    ],
+    [
+     "Select_Final_Dining",
+     23.27
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     66.29
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     42.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00803>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     43.62
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     33.5
+    ],
+    [
+     "Select_Final_Dining",
+     16.11
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     43.62
+    ],
+    [
+     "Dining_Refinement_Step1",
+     15.45
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     34.17
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00808>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     67.82
+    ],
+    [
+     "Select_Final_Dining",
+     22.68
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     19.2
+    ],
+    [
+     "Dining_Search_to_Step1",
+     33.99
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     37.49
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00813>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step2",
+     82.38
+    ],
+    [
+     "Select_Final_Dining",
+     15.38
+    ]
+   ],
+   "without_X": [
+    [
+     "Decide_Dining_Preference",
+     24.3
+    ],
+    [
+     "Dining_Search_to_Final_4Steps",
+     73.74
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00814>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     39.73
+    ],
+    [
+     "Dining_Refinement_Step1",
+     18.88
+    ],
+    [
+     "Dining_Refinement_Step2",
+     18.04
+    ],
+    [
+     "Select_Final_Dining",
+     15.4
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     39.73
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     52.33
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00817>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     40.16
+    ],
+    [
+     "Dining_Refinement_Step1",
+     16.91
+    ],
+    [
+     "Dining_Refinement_Step2",
+     15.48
+    ],
+    [
+     "Select_Final_Dining",
+     20.94
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     40.16
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     53.44
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00822>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Preference_and_Search",
+     42.6
+    ],
+    [
+     "Dining_Refine_to_Step2",
+     40.45
+    ],
+    [
+     "Select_Final_Dining",
+     24.39
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Preference_and_Search",
+     42.6
+    ],
+    [
+     "Dining_Finish_from_Step1_3Steps",
+     64.88
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00825>",
+   "task": "dining",
+   "X": "Select_Final_Dining",
+   "with_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     62.96
+    ],
+    [
+     "Dining_Refinement_Step2",
+     18.91
+    ],
+    [
+     "Select_Final_Dining",
+     24.51
+    ]
+   ],
+   "without_X": [
+    [
+     "Dining_Full_Planning_to_Step1",
+     62.96
+    ],
+    [
+     "Dining_Finalize_from_Step2",
+     43.46
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00843>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     24.18
+    ],
+    [
+     "Shopping_Search_to_Final_4Steps",
+     84.44
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     67.22
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     22.66
+    ],
+    [
+     "Select_Final_Shopping",
+     18.81
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00848>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     16.87
+    ],
+    [
+     "Shopping_Search_to_Final_4Steps",
+     69.44
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     67.03
+    ],
+    [
+     "Select_Final_Shopping",
+     19.62
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00851>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     22.55
+    ],
+    [
+     "Shopping_Search_to_Final_4Steps",
+     87.39
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     66.53
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     43.46
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00852>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     24.31
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     52.17
+    ],
+    [
+     "Select_Final_Shopping",
+     20.07
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     76.77
+    ],
+    [
+     "Select_Final_Shopping",
+     20.07
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00853>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     20.0
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     39.85
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     35.62
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     42.09
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     33.98
+    ],
+    [
+     "Select_Final_Shopping",
+     19.41
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00854>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     23.72
+    ],
+    [
+     "Search_Shopping_Candidates",
+     22.9
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     46.71
+    ],
+    [
+     "Select_Final_Shopping",
+     16.05
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     46.8
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     46.71
+    ],
+    [
+     "Select_Final_Shopping",
+     16.05
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00857>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     24.63
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     46.59
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     39.04
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     89.25
+    ],
+    [
+     "Select_Final_Shopping",
+     21.02
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00858>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     22.41
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     40.88
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     37.47
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     45.44
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     39.11
+    ],
+    [
+     "Select_Final_Shopping",
+     16.39
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00873>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     25.0
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     42.8
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     21.28
+    ],
+    [
+     "Select_Final_Shopping",
+     15.98
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     44.96
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     44.41
+    ],
+    [
+     "Select_Final_Shopping",
+     15.98
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00881>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     21.59
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     61.37
+    ],
+    [
+     "Select_Final_Shopping",
+     16.79
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     62.77
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     20.5
+    ],
+    [
+     "Select_Final_Shopping",
+     16.79
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00884>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     19.51
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     52.46
+    ],
+    [
+     "Select_Final_Shopping",
+     22.03
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     71.99
+    ],
+    [
+     "Select_Final_Shopping",
+     22.03
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00887>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     15.79
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     38.17
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     24.67
+    ],
+    [
+     "Select_Final_Shopping",
+     17.69
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     38.81
+    ],
+    [
+     "Shopping_Refinement_Step1",
+     15.29
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     24.67
+    ],
+    [
+     "Select_Final_Shopping",
+     17.69
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00890>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     24.78
+    ],
+    [
+     "Search_Shopping_Candidates",
+     21.97
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     65.87
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     70.99
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     21.85
+    ],
+    [
+     "Select_Final_Shopping",
+     19.91
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00906>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     22.34
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     34.07
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     37.35
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     38.8
+    ],
+    [
+     "Shopping_Refinement_Step1",
+     17.7
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     37.35
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00910>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     19.55
+    ],
+    [
+     "Search_Shopping_Candidates",
+     24.97
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     63.38
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     44.6
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     63.38
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00915>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     20.75
+    ],
+    [
+     "Search_Shopping_Candidates",
+     15.33
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     34.81
+    ],
+    [
+     "Select_Final_Shopping",
+     21.39
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     36.23
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     34.81
+    ],
+    [
+     "Select_Final_Shopping",
+     21.39
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00916>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     19.55
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     46.82
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     16.46
+    ],
+    [
+     "Select_Final_Shopping",
+     15.34
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     82.87
+    ],
+    [
+     "Select_Final_Shopping",
+     15.34
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00922>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     18.67
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     32.5
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     33.22
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     51.21
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     33.22
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00927>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     20.22
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     64.59
+    ],
+    [
+     "Select_Final_Shopping",
+     17.8
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     60.32
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     42.39
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00928>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     21.46
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     63.62
+    ],
+    [
+     "Select_Final_Shopping",
+     15.79
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     46.02
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     39.19
+    ],
+    [
+     "Select_Final_Shopping",
+     15.79
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00931>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     20.83
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     39.22
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     40.13
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     77.58
+    ],
+    [
+     "Select_Final_Shopping",
+     22.73
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00938>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     18.05
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     42.04
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     46.56
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     38.82
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     43.23
+    ],
+    [
+     "Select_Final_Shopping",
+     24.72
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00944>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     21.35
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     57.85
+    ],
+    [
+     "Select_Final_Shopping",
+     20.05
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     79.3
+    ],
+    [
+     "Select_Final_Shopping",
+     20.05
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00956>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     15.14
+    ],
+    [
+     "Search_Shopping_Candidates",
+     20.84
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     58.63
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     36.14
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     58.63
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00967>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     24.32
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     67.35
+    ],
+    [
+     "Select_Final_Shopping",
+     16.65
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     91.72
+    ],
+    [
+     "Select_Final_Shopping",
+     16.65
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00969>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     22.49
+    ],
+    [
+     "Search_Shopping_Candidates",
+     20.1
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     58.03
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     42.62
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     58.03
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00977>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     19.04
+    ],
+    [
+     "Search_Shopping_Candidates",
+     21.68
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     55.08
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step2",
+     77.17
+    ],
+    [
+     "Select_Final_Shopping",
+     18.71
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00981>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     15.49
+    ],
+    [
+     "Shopping_Search_to_Final_4Steps",
+     83.63
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     38.47
+    ],
+    [
+     "Shopping_Refine_to_Step2",
+     40.72
+    ],
+    [
+     "Select_Final_Shopping",
+     20.02
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00985>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     22.63
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     30.87
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     38.11
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     53.52
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     38.11
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00986>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     15.01
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     59.7
+    ],
+    [
+     "Select_Final_Shopping",
+     17.59
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     52.43
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     39.94
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00991>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     21.85
+    ],
+    [
+     "Search_Shopping_Candidates",
+     24.87
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     50.16
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     46.74
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     50.16
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00997>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     23.14
+    ],
+    [
+     "Shopping_Search_Planning_to_Step2",
+     58.03
+    ],
+    [
+     "Select_Final_Shopping",
+     22.33
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     61.67
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     19.65
+    ],
+    [
+     "Select_Final_Shopping",
+     22.33
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query00999>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     20.96
+    ],
+    [
+     "Shopping_Search_to_Step1",
+     36.73
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     40.91
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Preference_and_Search",
+     38.72
+    ],
+    [
+     "Shopping_Refinement_Step1",
+     19.22
+    ],
+    [
+     "Shopping_Finalize_from_Step2",
+     40.91
+    ]
+   ]
+  },
+  {
+   "query_id": "<Query01000>",
+   "task": "shopping",
+   "X": "Decide_Shopping_Preference",
+   "with_X": [
+    [
+     "Decide_Shopping_Preference",
+     18.69
+    ],
+    [
+     "Search_Shopping_Candidates",
+     15.63
+    ],
+    [
+     "Shopping_Finish_from_Step1_3Steps",
+     56.97
+    ]
+   ],
+   "without_X": [
+    [
+     "Shopping_Full_Planning_to_Step1",
+     49.68
+    ],
+    [
+     "Shopping_Refinement_Step2",
+     22.8
+    ],
+    [
+     "Select_Final_Shopping",
+     19.02
+    ]
+   ]
+  }
+ ]
+}

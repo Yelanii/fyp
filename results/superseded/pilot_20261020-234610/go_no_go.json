@@ -1,0 +1,74 @@
+{
+ "scenarios": {
+  "S1_sudden": {
+   "best_baseline": "B4_cusum",
+   "baseline_median_cps": 133.85849056603777,
+   "rule_median_cps": 155.08583570958513,
+   "relative_change": 0.15858049088843607,
+   "wilcoxon_p_one_sided": 0.9999999999999961,
+   "criterion1_met": false,
+   "rule_false_switches_per_1000": 0.0,
+   "baseline_false_switches_per_1000": 0.0,
+   "criterion2_met": true,
+   "all_baseline_medians": {
+    "B1_always": 172.96072194118113,
+    "B2_never": 198.20855614973263,
+    "B3_fixed": 183.40621045621117,
+    "B4_cusum": 133.85849056603777,
+    "B8_fixed_est": 211.19119769119766
+   }
+  },
+  "S2_gradual": {
+   "best_baseline": "B4_cusum",
+   "baseline_median_cps": 138.08155339805808,
+   "rule_median_cps": 189.63845268542087,
+   "relative_change": 0.3733800643068943,
+   "wilcoxon_p_one_sided": 0.9999999999999961,
+   "criterion1_met": false,
+   "rule_false_switches_per_1000": 0.0,
+   "baseline_false_switches_per_1000": 8.75,
+   "criterion2_met": true,
+   "all_baseline_medians": {
+    "B1_always": 194.0490714285727,
+    "B2_never": 196.00746268656718,
+    "B3_fixed": 198.18016194331915,
+    "B4_cusum": 138.08155339805808,
+    "B8_fixed_est": 197.84117647058832
+   }
+  },
+  "S3_harmless": {
+   "best_baseline": "B4_cusum",
+   "baseline_median_cps": 136.630882352941,
+   "rule_median_cps": 144.03236559139805,
+   "relative_change": 0.05417137846872522,
+   "wilcoxon_p_one_sided": 0.9999999999996391,
+   "criterion1_met": false,
+   "rule_false_switches_per_1000": 0.0,
+   "baseline_false_switches_per_1000": 8.333333333333332,
+   "criterion2_met": true,
+   "all_baseline_medians": {
+    "B1_always": 157.9605000000019,
+    "B2_never": 145.24086271471006,
+    "B3_fixed": 152.5691154422788,
+    "B4_cusum": 136.630882352941,
+    "B8_fixed_est": 146.2898876404494
+   }
+  }
+ },
+ "criterion1_scenarios_won": 0,
+ "criterion1_met": false,
+ "criterion2_met": true,
+ "criterion3_settings": [
+  {
+   "q": 0.5,
+   "check_frac": 0.3,
+   "rule_checks": 0.11625,
+   "fixed_checks": 1.6241666666666668,
+   "rule_leak": 0.27208333333333334,
+   "fixed_leak": 0.24541666666666667,
+   "met": false
+  }
+ ],
+ "criterion3_met": false,
+ "decision": "NO-GO (pivot)"
+}

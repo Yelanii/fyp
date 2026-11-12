@@ -1,0 +1,127 @@
+{
+ "test": "always",
+ "compared": [
+  "Decision rule v2",
+  "Always check (B1)"
+ ],
+ "seeds": [
+  400,
+  419
+ ],
+ "pairs": 1260,
+ "p_all": 4.959449762773129e-44,
+ "mean_relative_difference": -0.03470295467978566,
+ "conditions_won": 42,
+ "conditions": 63,
+ "p_per_seed": 9.5367431640625e-07,
+ "rule_mean_total_loss": 151.08110273368652,
+ "cusum_mean_total_loss": 158.2818320105826,
+ "decision": "NOT CONFIRMED",
+ "conditions_rule_did_not_win": [
+  {
+   "drop": 0.6,
+   "q": 0.8,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.8,
+   "q": 0.95,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.8,
+   "q": 0.95,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.85,
+   "q": 0.95,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.85,
+   "q": 0.95,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.85,
+   "q": 0.95,
+   "check_frac": 0.3
+  },
+  {
+   "drop": 0.9,
+   "q": 0.5,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.9,
+   "q": 0.8,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.9,
+   "q": 0.8,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.9,
+   "q": 0.8,
+   "check_frac": 0.3
+  },
+  {
+   "drop": 0.9,
+   "q": 0.95,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.9,
+   "q": 0.95,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.9,
+   "q": 0.95,
+   "check_frac": 0.3
+  },
+  {
+   "drop": 0.95,
+   "q": 0.5,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.95,
+   "q": 0.5,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.95,
+   "q": 0.8,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.95,
+   "q": 0.8,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.95,
+   "q": 0.8,
+   "check_frac": 0.3
+  },
+  {
+   "drop": 0.95,
+   "q": 0.95,
+   "check_frac": 0.05
+  },
+  {
+   "drop": 0.95,
+   "q": 0.95,
+   "check_frac": 0.15
+  },
+  {
+   "drop": 0.95,
+   "q": 0.95,
+   "check_frac": 0.3
+  }
+ ]
+}
