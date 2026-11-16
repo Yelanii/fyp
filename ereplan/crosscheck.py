@@ -26,10 +26,14 @@ Per checked call (p = tool success rate, a = alternative tool success rate, rho 
 Approximations (stated in PREREGISTRATION_v5.md): plug-in estimates of p and a when updating (q, f); the (q, f)
 posterior is used as a prior for the windowed success-rate estimate, so recent checked calls count twice for q.
 """
+import os
 import numpy as np
 
 from .selfcal import JointEstimator, SelfCalibratingRule, PG, QG, _E
 from .strategies import CheckAlways, REGISTRY
+
+# EREPLAN_NETPV=1 switches every cross-checking rule to the corrected (net) check criterion.
+NETPV = os.environ.get("EREPLAN_NETPV") == "1"
 
 import os as _os
 # False-alarm grid. Default 0..0.5 (all experiments up to 31 Oct 2026). Real FreshQA judges have f up to about 0.8,
@@ -189,13 +193,41 @@ class CrossCheckRule(SelfCalibratingRule):
         return mean * f * (s.eff_price(j) + (1 - a) * (1 - s.rho) * s.leak_loss
                            + (1 - a) * s.rho * (s.eff_price(ctx["cur"]) + s.check_price))
 
+    # Net protection value (16 Nov 2026). With net = False the rule is exactly the one evaluated up to 15 Nov:
+    # it counts the whole wrong-answer loss as saved by a catch (gross PV). With net = True it also subtracts the
+    # cost of resolving a caught failure by the cross-check, q s R, which is the consistent one-step criterion
+    #     q s (L - R) + DV - p f R >= check price,   s = (1-p)(1-rho),
+    # where R is the same resolution cost that the false-alarm term uses. See PREREGISTRATION_netpv.md.
+    net = NETPV
+
+    def resolve_cost(self, ctx):
+        """R: expected cost of resolving one flag by a cross-check (alternative call; wrong answer if the
+        alternative is silently wrong; one retry if it fails loudly)."""
+        s, j = self.s, self.crosscheck_tool(ctx)
+        a = self.ests[j].mean
+        return (s.eff_price(j) + (1 - a) * (1 - s.rho) * s.leak_loss
+                + (1 - a) * s.rho * (s.eff_price(ctx["cur"]) + s.check_price))
+
     def wants_check(self, ctx, line, mean, low, high):
         want = super().wants_check(ctx, line, mean, low, high)
         tr = ctx["trace"]
         fa = self.fa_cost(mean, ctx)
         tr.update(fa_cost=fa, f_hat=self.cm.f_mean, q_hat_cm=self.cm.q_mean)
         tr["reason"] += f"; learned f {self.cm.f_mean:.2f}; false-alarm cost {fa:.1f}"
-        return (tr["pv"] + tr["dv"] - fa) >= self.s.check_price or tr["audit"]
+        catch_cost = 0.0
+        if self.net:
+            q = tr["pv"] / max((1 - mean) * (1 - self.s.rho) * self.s.leak_loss, 1e-12)   # the q used for PV
+            catch_cost = q * (1 - mean) * (1 - self.s.rho) * self.resolve_cost(ctx)
+            tr.update(pv_net=tr["pv"] - catch_cost)
+        return (tr["pv"] - catch_cost + tr["dv"] - fa) >= self.s.check_price or tr["audit"]
+
+
+class CrossCheckRuleNet(CrossCheckRule):
+    """Rule v5 with the net protection value, whatever the EREPLAN_NETPV setting (used by run_netpv.py to compare
+    the corrected rule with the evaluated one in the same run)."""
+    name = "Rule_v5_net"
+    rng_name = "Rule_v5_x"
+    net = True
 
 
 class CrossCheckRuleTold(CrossCheckRule):
@@ -225,5 +257,5 @@ class AlwaysCrossCheck(CheckAlways):
         super().observe(k, checked, failure_seen, kind)
 
 
-for _cls in (CrossCheckRule, CrossCheckRuleTold, AlwaysCrossCheck):
+for _cls in (CrossCheckRule, CrossCheckRuleNet, CrossCheckRuleTold, AlwaysCrossCheck):
     REGISTRY[_cls.name] = _cls

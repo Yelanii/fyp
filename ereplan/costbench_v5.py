@@ -29,7 +29,7 @@ from scipy.stats import binom, wilcoxon
 from .costbench_exp import (ROUTES, N_TASKS, P_OK, RHO, R_MAX, World, _rng, route_loss, line_for,
                             Never, Always, Cusum, RuleV2)
 from .fa_rule import JointEstimatorFA
-from .crosscheck import CheckerMemory, JointEstimatorV5, FLAG_KINDS
+from .crosscheck import CheckerMemory, JointEstimatorV5, FLAG_KINDS, NETPV
 from .selfcal import PG, QG
 
 CHECK_FRAC = 0.15
@@ -106,7 +106,11 @@ class _Joint:
             mean, q, dv, audit = P_OK, self.q_other(), 0.0, False
         pv = q * (1 - mean) * (1 - RHO) * L
         fa = self.fa_cost(i, ri, name, price, mean)
+        pv -= self.catch_cost(i, ri, name, price, mean, q)     # 0 unless the corrected (net) criterion is on
         return (pv + dv - fa) >= cp or audit
+
+    def catch_cost(self, i, ri, name, price, mean, q):
+        return 0.0
 
 
 class RuleV4CB(_Joint):
@@ -161,6 +165,15 @@ class RuleV5CB(_Joint):
         a = P_OK
         alt = self.w.alt_price(i, name, price)
         return mean * self.cm.f_mean * (alt + (1 - a) * (1 - RHO) * self.w.L + (1 - a) * RHO * (price + self.w.check_price))
+
+    def catch_cost(self, i, ri, name, price, mean, q):
+        """Net protection value (16 Nov 2026): cost of resolving a caught failure by the cross-check."""
+        if not NETPV:
+            return 0.0
+        a = P_OK
+        alt = self.w.alt_price(i, name, price)
+        R = alt + (1 - a) * (1 - RHO) * self.w.L + (1 - a) * RHO * (price + self.w.check_price)
+        return q * (1 - mean) * (1 - RHO) * R
 
     def observe(self, i, name, isX, checked, kind):
         kind = kind if kind in ("loud",) + FLAG_KINDS else "none"
