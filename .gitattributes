@@ -1,1 +1,5 @@
 * -text
+*.html linguist-documentation
+*.json linguist-generated
+results/** linguist-generated
+data/** linguist-vendored
