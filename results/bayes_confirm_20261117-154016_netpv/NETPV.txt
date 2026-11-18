@@ -1,0 +1,2 @@
+Run by run_corrected_suite.py (bayes) with EREPLAN_NETPV=1 (corrected check criterion).
+Seeds 8240-8259. See PREREGISTRATION_corrected_suite.md.

@@ -1,0 +1,2 @@
+Run by run_corrected_suite.py (fr11) with EREPLAN_NETPV=1 (corrected check criterion).
+Seeds 8400-8417. See PREREGISTRATION_corrected_suite.md.

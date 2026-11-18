@@ -1,0 +1,2 @@
+Run by run_corrected_suite.py (freshqa) with EREPLAN_NETPV=1 (corrected check criterion).
+Seeds 8600-8619. See PREREGISTRATION_corrected_suite.md.
