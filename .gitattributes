@@ -1,5 +1,5 @@
 * -text
-*.html linguist-documentation
+*.html linguist-detectable=false
 *.json linguist-generated
 results/** linguist-generated
 data/** linguist-vendored
