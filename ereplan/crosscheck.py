@@ -230,6 +230,15 @@ class CrossCheckRuleNet(CrossCheckRule):
     net = True
 
 
+class CrossCheckRuleSym(CrossCheckRule):
+    """The corrected rule (net PV) whose decision value prices staying with the same per-call cost as the switch line,
+    c/p + (1-p)(1-rho)L, so both sides of the keep-or-switch comparison count wrong answers (PREREGISTRATION_dvsym.md)."""
+    name = "Rule_v5_sym"
+    rng_name = "Rule_v5_x"
+    net = True
+    dv_sym = True
+
+
 class CrossCheckRuleTold(CrossCheckRule):
     """Ablation: rule v5's cross-check policy, but TOLD q and f (as rule v4 is). Isolates the value of learning."""
     name = "Rule_v5_told"
@@ -257,5 +266,5 @@ class AlwaysCrossCheck(CheckAlways):
         super().observe(k, checked, failure_seen, kind)
 
 
-for _cls in (CrossCheckRule, CrossCheckRuleNet, CrossCheckRuleTold, AlwaysCrossCheck):
+for _cls in (CrossCheckRule, CrossCheckRuleNet, CrossCheckRuleSym, CrossCheckRuleTold, AlwaysCrossCheck):
     REGISTRY[_cls.name] = _cls

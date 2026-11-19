@@ -97,7 +97,12 @@ class SelfCalibratingRule(LeakAwareRule):
         c = self.s.eff_price(cur)
         sw = R_alt + self.s.switch_cost
         pbar = float((w.sum(axis=1) * PG[:, 0]).sum())
-        d0_stay = u * c / max(pbar, 1e-6) <= sw
+        # dv_sym (19 Nov 2026, PREREGISTRATION_dvsym.md): price staying with the same per-call cost as the switch
+        # line, g(c, p) = c/p + (1-p)(1-rho)L, instead of c/p only. Off by default, so every earlier result is unchanged.
+        sym = getattr(self, "dv_sym", False)
+        stay = (lambda m: u * (c / max(m, 1e-6) + (1 - m) * (1 - self.s.rho) * self.s.leak_loss)) if sym else \
+               (lambda m: u * c / max(m, 1e-6))
+        d0_stay = stay(pbar) <= sw
         sav = 0.0
         for j in range(k + 1):
             lj = w * binom.pmf(j, k, f)
@@ -105,7 +110,7 @@ class SelfCalibratingRule(LeakAwareRule):
             if pj <= 0:
                 continue
             mj = float((lj.sum(axis=1) * PG[:, 0]).sum() / pj)
-            stay_j = u * c / max(mj, 1e-6)
+            stay_j = stay(mj)
             sav += pj * ((stay_j if d0_stay else sw) - min(stay_j, sw))
         return sav / k
 
