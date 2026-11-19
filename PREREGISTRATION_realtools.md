@@ -67,6 +67,17 @@ A review of paper draft v0.6 (18 Nov 2026, methodological soundness 6.2/10) gave
 - **M-A2 not confirmed:** the cross-check's use of the alternative's answer is not justified for that pair. That
   is a real limitation of the method, and it will be reported.
 
+## Run record (added 19 Nov 2026, after the run)
+- Study M ran once, 18-19 Nov 2026, with `measure_assumptions.py` as committed before the run (all models on each
+  problem in turn); output `results/assumptions_confirm_20261118-131727`, 94,739 s in total. A faster version that runs
+  one model at a time was written on 18 Nov while the run was in progress; it was not used, and the committed script
+  is the one that produced the results. Part of Part 1 overlapped with other work on the same laptop, which affects
+  only the running time.
+- The report's heading cites `PREREGISTRATION_assumptions.md`; that is a typo in the script for this file.
+- Outcome: M-A1 covered for both primary pairs (sigma upper bounds 0.495 and 0.520); M-A2 confirmed for both
+  (28/35, p = 0.00025; 25/29, p = 5.2e-05); M-A3 covered (e = 59/574 = 0.103, upper bound 0.130). Descriptive:
+  the same-family pair gave 18/35 = 0.514 for A2 (p = 0.5), so A2 does not hold for that pair.
+
 ## Known limits
 - The models are small (1.5B to 8B), because everything runs on a CPU.
 - Part 2 uses unaudited change labels; at least one pair (fq42) looks mislabelled.
