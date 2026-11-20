@@ -102,6 +102,9 @@ class SelfCalibratingRule(LeakAwareRule):
         sym = getattr(self, "dv_sym", False)
         stay = (lambda m: u * (c / max(m, 1e-6) + (1 - m) * (1 - self.s.rho) * self.s.leak_loss)) if sym else \
                (lambda m: u * c / max(m, 1e-6))
+        if getattr(self, "exact_line", False):          # PREREGISTRATION_exactline.md: exact step cost on both sides
+            from .strategies import exact_step_cost
+            stay = lambda m: u * exact_step_cost(self.s, cur, m)
         d0_stay = stay(pbar) <= sw
         sav = 0.0
         for j in range(k + 1):

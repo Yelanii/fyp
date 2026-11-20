@@ -239,6 +239,16 @@ class CrossCheckRuleSym(CrossCheckRule):
     dv_sym = True
 
 
+class CrossCheckRuleExact(CrossCheckRule):
+    """The corrected rule (net PV) whose switch line and decision value price a planned step with its exact loss
+    under the failure model (loud failures retried up to r_max times, silent ones accepted), instead of c/p
+    (PREREGISTRATION_exactline.md)."""
+    name = "Rule_v5_exact"
+    rng_name = "Rule_v5_x"
+    net = True
+    exact_line = True
+
+
 class CrossCheckRuleTold(CrossCheckRule):
     """Ablation: rule v5's cross-check policy, but TOLD q and f (as rule v4 is). Isolates the value of learning."""
     name = "Rule_v5_told"
@@ -266,5 +276,5 @@ class AlwaysCrossCheck(CheckAlways):
         super().observe(k, checked, failure_seen, kind)
 
 
-for _cls in (CrossCheckRule, CrossCheckRuleNet, CrossCheckRuleSym, CrossCheckRuleTold, AlwaysCrossCheck):
+for _cls in (CrossCheckRule, CrossCheckRuleNet, CrossCheckRuleSym, CrossCheckRuleExact, CrossCheckRuleTold, AlwaysCrossCheck):
     REGISTRY[_cls.name] = _cls

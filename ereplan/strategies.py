@@ -264,7 +264,17 @@ REGISTRY = {cls.name: cls for cls in (ThreeZoneRule, CheckAlways, NeverCheck, Fi
 
 
 # --------------------------------------------------------------------------- exploratory variant (not pre-registered)
-def leak_aware_line(s: Setting, cur: int, u: int, alt_p: dict, switch_cost: float):
+def exact_step_cost(s: Setting, j: int, p: float) -> float:
+    """Exact expected loss of one planned step on tool j without a check (policy N of Theorem 1): loud failures
+    are retried up to r_max times, silent failures are accepted (PREREGISTRATION_exactline.md)."""
+    p = min(max(p, 0.0), 1.0)
+    l, sil = (1 - p) * s.rho, (1 - p) * (1 - s.rho)
+    n = s.r_max + 1
+    calls = float(n) if l >= 1 - 1e-12 else (1 - l ** n) / (1 - l)
+    return s.eff_price(j) * calls + s.leak_loss * sil * calls + s.task_cost * l ** n
+
+
+def leak_aware_line(s: Setting, cur: int, u: int, alt_p: dict, switch_cost: float, exact: bool = False):
     """Exploratory: break-even rate when the cost of staying also counts expected leak loss.
 
     stay(p)   = u * [ c/p + (1 - p)(1 - rho) * L_leak ]
@@ -272,6 +282,8 @@ def leak_aware_line(s: Setting, cur: int, u: int, alt_p: dict, switch_cost: floa
     Solved for p by bisection (stay(p) falls as p rises).
     """
     def per_call(j, p):
+        if exact:
+            return exact_step_cost(s, j, p)
         p = max(p, 1e-6)
         return s.eff_price(j) / p + (1 - p) * (1 - s.rho) * s.leak_loss
     best_j = min((j for j in alt_p if j != cur), key=lambda j: per_call(j, alt_p[j]))
@@ -294,7 +306,8 @@ class LeakAwareRule(ThreeZoneRule):
     name = "Rule_leakaware"
 
     def line(self, ctx):
-        return leak_aware_line(self.s, ctx["cur"], self.horizon(ctx), self.p_view(ctx), self.s.switch_cost)
+        return leak_aware_line(self.s, ctx["cur"], self.horizon(ctx), self.p_view(ctx), self.s.switch_cost,
+                               exact=getattr(self, "exact_line", False))
 
 
 REGISTRY[LeakAwareRule.name] = LeakAwareRule
