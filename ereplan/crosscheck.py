@@ -53,14 +53,19 @@ def _beta_log(grid, mean, strength):
 class CheckerMemory:
     """Posterior over the checker's (q, f), shared by all tools. fixed=(q, f) gives a point mass (the 'told' rule)."""
 
-    def __init__(self, rho, q_mean=0.5, q_strength=2.0, f_mean=0.1, f_strength=2.0, fixed=None):
+    def __init__(self, rho, q_mean=0.5, q_strength=2.0, f_mean=0.1, f_strength=2.0, fixed=None, f_ab=None):
         self.rho = rho
         if fixed is not None:
             lp = np.full((len(_Q), FG.size), -np.inf)
             lp[int(np.argmin(np.abs(_Q[:, 0] - fixed[0]))), int(np.argmin(np.abs(FG - fixed[1])))] = 0.0
             self.fixed = True
         else:
-            lp = _beta_log(_Q, q_mean, q_strength) + _beta_log(_F / FMAX, f_mean / FMAX, f_strength)
+            if f_ab is None:
+                lp = _beta_log(_Q, q_mean, q_strength) + _beta_log(_F / FMAX, f_mean / FMAX, f_strength)
+            else:                               # Beta(a, b) on f / FMAX given directly, with no floor on a or b
+                a, b = f_ab
+                lp = _beta_log(_Q, q_mean, q_strength) + ((a - 1) * np.log(np.clip(_F / FMAX, _E, 1))
+                                                          + (b - 1) * np.log(np.clip(1 - _F / FMAX, _E, 1)))
             self.fixed = False
         self.lp = lp
         self._w = None
@@ -158,10 +163,13 @@ class CrossCheckRule(SelfCalibratingRule):
     crosscheck = True
 
     def __init__(self, s, rng, window=60, epsilon=0.02, k=3, told=False,
-                 q_prior_mean=0.5, q_prior_strength=2.0, f_prior_mean=0.1, f_prior_strength=2.0):
+                 q_prior_mean=0.5, q_prior_strength=2.0, f_prior_mean=0.1, f_prior_strength=2.0, f_prior_matched=False):
         super().__init__(s, rng, window, epsilon, k, q_prior_strength)
         fixed = (s.q_assumed, s.f_assumed) if told else None
-        self.cm = CheckerMemory(s.rho, q_prior_mean, q_prior_strength, f_prior_mean, f_prior_strength, fixed=fixed)
+        # f_prior_matched: a weak prior whose mean really is f_prior_mean on the f grid. The default prior floors
+        # each Beta parameter at 1, which moves its mean from 0.1 to about 0.19 (FMAX 0.5) or 0.33 (FMAX 0.95).
+        f_ab = (1.0, FMAX / f_prior_mean - 1.0) if f_prior_matched else None
+        self.cm = CheckerMemory(s.rho, q_prior_mean, q_prior_strength, f_prior_mean, f_prior_strength, fixed=fixed, f_ab=f_ab)
         self.ests = [JointEstimatorV5(window, s.rho, t.advertised_p, s.prior_strength, self.cm) for t in s.tools]
 
     # ---- cross-check hooks used by the runner
