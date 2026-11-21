@@ -55,7 +55,9 @@ def main(which):
         rows = [r for rs in pool.imap_unordered(job, keys, chunksize=4) for r in rs]
     sm = lambda k: np.array([np.mean([r["loss"] for r in rows if r["strategy"] == k and r["seed"] == s]) for s in seeds])
     fh = lambda r: r.get("f_hat")
-    bias = lambda k: np.array([abs(np.median([fh(r) - r["f"] for r in rows if r["strategy"] == k and r["seed"] == s and fh(r) is not None])) for s in seeds])
+    LOW, HIGH = ("qwen2.5:1.5b", "qwen2.5:3b"), ("phi4-mini", "llama3.1:8b")
+    bias = lambda k, grp: np.array([np.mean([abs(np.median([fh(r) - r["f"] for r in rows if r["strategy"] == k and r["seed"] == s
+                                                             and r["profile"] == pr and fh(r) is not None])) for pr in grp]) for s in seeds])
     L = [f"# Prior-fix test, CostBench with real-checker rates ({which}), seeds {seeds[0]}-{seeds[-1]}", "",
          f"{len(keys) // len(seeds)} conditions per seed; {len(rows)} runs; {time.time() - t0:.0f} s. f grid [0, {FMAX}].", "",
          "| Strategy | total loss | checks/task | median learned f - true f, by checker profile |", "|---|---|---|---|"]
@@ -64,11 +66,16 @@ def main(which):
         per = "; ".join(f"{p}: {np.median([fh(r) - r['f'] for r in R if r['profile'] == p and fh(r) is not None]):+.3f}"
                         for p in PROFILES) if any(fh(r) is not None for r in R) else "-"
         L.append(f"| {k} | {sm(k).mean():.1f} | {np.mean([r['checks'] for r in R]):.2f} | {per} |")
-    p = 1.0 if np.allclose(bias("v5_fix"), bias("v5")) else float(wilcoxon(bias("v5_fix"), bias("v5"), alternative="less").pvalue)
+    wl = lambda x, y, alt: 1.0 if np.allclose(x, y) else float(wilcoxon(x, y, alternative=alt).pvalue)
+    pa = wl(bias("v5_fix", LOW), bias("v5", LOW), "less")
+    pb = wl(bias("v5_fix", HIGH), bias("v5", HIGH), "greater")
     lo, hi = _boot(sm("v5_fix"), sm("v5"))
     L += ["", "## Pre-registered hypotheses (PREREGISTRATION_priorfix.md)", "",
-          f"- H-F6 the fixed prior lowers the bias of the learned f: {bias('v5_fix').mean():.3f} vs {bias('v5').mean():.3f}, "
-          f"one-sided Wilcoxon p = {p:.2g} -> **{'CONFIRMED' if p < 0.05 else 'NOT CONFIRMED'}**",
+          f"- H-F6a checkers with low f (Qwen): the fixed prior LOWERS the bias of the learned f: {bias('v5_fix', LOW).mean():.3f} vs "
+          f"{bias('v5', LOW).mean():.3f}, one-sided Wilcoxon p = {pa:.2g} -> **{'CONFIRMED' if pa < 0.05 else 'NOT CONFIRMED'}**",
+          f"- H-F6b judges with high f (Phi-4 Mini, Llama 3.1 8B): the fixed prior RAISES the bias of the learned f (shrinkage towards "
+          f"the prior mean): {bias('v5_fix', HIGH).mean():.3f} vs {bias('v5', HIGH).mean():.3f}, one-sided Wilcoxon p = {pb:.2g} -> "
+          f"**{'CONFIRMED' if pb < 0.05 else 'NOT CONFIRMED'}**",
           f"- H-F7 the fixed prior costs at most 1% loss: {sm('v5_fix').mean():.1f} vs {sm('v5').mean():.1f} "
           f"({100 * (sm('v5_fix').mean() / sm('v5').mean() - 1):+.2f}%, 95% CI {lo:+.2f}% to {hi:+.2f}%) -> **{'CONFIRMED' if hi <= 1 else 'NOT CONFIRMED'}**"]
     for k in ("v5_told", "v4"):
