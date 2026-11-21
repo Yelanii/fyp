@@ -36,6 +36,13 @@ def true_rates(setting: Setting, scenario: str, seed: int) -> np.ndarray:
         level = float(scenario.split("_")[1])
         t0 = int(r.integers(150, 350))
         p[a, t0:] = level
+    # 21 Nov 2026 (drift test): "ramp_<level>": tool A declines linearly from its base rate to <level> over 200
+    # calls, starting at the step where "drop_<level>" drops on the same seed. Only this new name uses it.
+    elif scenario.startswith("ramp_"):
+        level = float(scenario.split("_")[1])
+        t0 = int(_rng("scenario", f"drop_{level:.2f}", seed).integers(150, 350))
+        ramp = np.clip((np.arange(T) - t0) / 200.0, 0.0, 1.0)
+        p[a] = p[a, 0] - (p[a, 0] - level) * ramp
     # 10 Nov 2026 (boundary map): "pdrop_<level>@p<NN>": tool A drops to <level> in only NN% of runs. Own random
     # streams, so every earlier scenario is unchanged.
     elif scenario.startswith("pdrop_"):
@@ -114,6 +121,23 @@ class Environment:
         KR = 3
         self.u_rp = _rng("recheck_persist", scenario, seed).random((T, A, KR))
         self.u_rf = _rng("recheck_fresh", scenario, seed).random((K, T, A, KR))
+        # drift test (21 Nov 2026): the step at which the checker's rates change. Own random stream, drawn only
+        # when a late rate is set (Setting.q_late, f_late), so every earlier run is unchanged.
+        self.t_drift = None
+        if getattr(setting, "q_late", -1.0) >= 0 or getattr(setting, "f_late", -1.0) >= 0:
+            self.t_drift = int(_rng("checker_drift", scenario, seed).integers(200, 400))
+
+    def f_at(self, t: int) -> float:
+        """The checker's false-alarm rate at step t (it changes once if Setting.f_late is set)."""
+        if getattr(self, "t_drift", None) is not None and t >= self.t_drift and self.s.f_late >= 0:
+            return self.s.f_late
+        return self.s.false_alarm
+
+    def q_at(self, t: int) -> float:
+        """The checker's catch rate at step t (it changes once if Setting.q_late is set)."""
+        if getattr(self, "t_drift", None) is not None and t >= self.t_drift and self.s.q_late >= 0:
+            return self.s.q_late
+        return self.s.q_true
 
     @property
     def T(self) -> int:
@@ -123,29 +147,31 @@ class Environment:
         """Outcome of one attempt: 'ok', 'loud', 'caught' (silent, caught by a check), 'leak', or
         'false_alarm' (correct, but the check wrongly flags it; the agent cannot tell it from 'caught')."""
         if self.u_success[k, t, attempt] < self.p[k, t]:
-            if checked and self.s.false_alarm > 0:
+            f_t = self.f_at(t)
+            if checked and f_t > 0:
                 if self.pi >= 1.0:
                     u = self.u_fa[t, 0]
                 elif self.pi <= 0.0:
                     u = self.u_fa[t, attempt]
                 else:
                     u = self.u_fa_eff[t, attempt]
-                if u < self.s.false_alarm:
+                if u < f_t:
                     return "false_alarm"            # correct result, but the check flags it
             return "ok"
         if self.u_loud[k, t, attempt] < self.s.rho:
             return "loud"
-        q_eff = self.s.q_true
+        q_eff = self.q_at(t)
         if self.s.check_corr > 0 and self.p[k, t] < self.s.tools[k].base_p - 1e-9:
-            q_eff = self.s.q_true * (1.0 - self.s.check_corr)
+            q_eff = q_eff * (1.0 - self.s.check_corr)
         if checked and self.u_catch[k, t, attempt] < q_eff:
             return "caught"
         return "leak"
 
     def _q_eff(self, k: int, t: int) -> float:
+        q = self.q_at(t)
         if self.s.check_corr > 0 and self.p[k, t] < self.s.tools[k].base_p - 1e-9:
-            return self.s.q_true * (1.0 - self.s.check_corr)
-        return self.s.q_true
+            return q * (1.0 - self.s.check_corr)
+        return q
 
     def third_source(self, t: int, attempt: int, truly_correct: bool, shared_event: bool) -> bool:
         """FR19: an independent third source (a different model family) judges the SAME output the two-source
@@ -160,10 +186,10 @@ class Environment:
         """
         u = _rng("third", self.scenario, self.seed, t, attempt).random()
         if truly_correct:
-            return u >= self.s.false_alarm
+            return u >= self.f_at(t)
         if shared_event:
             return u < self.s.third_shared
-        q3 = self.s.third_q if self.s.third_q >= 0 else self.s.q_true
+        q3 = self.s.third_q if self.s.third_q >= 0 else self.q_at(t)
         return u >= q3
 
     def recheck(self, k: int, t: int, attempt: int, j: int, prev_flag: bool, truly_correct: bool) -> bool:
@@ -173,5 +199,5 @@ class Environment:
         if self.u_rp[t, attempt, j - 1] < self.pi:
             return prev_flag
         u = self.u_rf[k, t, attempt, j - 1]
-        return bool(u < (self.s.false_alarm if truly_correct else self._q_eff(k, t)))
+        return bool(u < (self.f_at(t) if truly_correct else self._q_eff(k, t)))
 

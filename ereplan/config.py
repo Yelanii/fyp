@@ -57,6 +57,10 @@ class Setting:
     audit_frac: float = 0.0          # share of ALL checked calls where the true label is also bought (a small,
                                       # expensive labelled audit) and fed straight to the rule
     audit_price: float = -1.0        # price of one audited label; -1 means "same as mean_price"
+    # --- drift test (21 Nov 2026): the checker's rates change once during a run, at a step drawn per run from
+    # its own random stream (Environment.t_drift). -1 keeps the rate unchanged, so every earlier run is unchanged.
+    q_late: float = -1.0             # catch rate from the change on
+    f_late: float = -1.0             # false-alarm rate from the change on
 
     @property
     def mean_price(self) -> float:
