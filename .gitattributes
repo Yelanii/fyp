@@ -2,4 +2,3 @@
 *.json linguist-generated
 results/** linguist-generated
 data/** linguist-vendored
-results/Hanwella_Progress_Demo.html linguist-generated=false

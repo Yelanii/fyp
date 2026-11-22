@@ -1,4 +1,4 @@
-"""Tests for the FR21 ablation (9 Nov 2026): rule v5.1 with one ingredient removed at a time."""
+"""Tests for the FR21 ablation: rule v5.1 with one ingredient removed at a time."""
 from ereplan.config import Setting
 from ereplan.runner import run
 import ereplan.ablation_v51  # noqa: F401  (registers the ablation variants)

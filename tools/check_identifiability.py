@@ -1,5 +1,7 @@
-"""Proposition 4 (identifiability): rank of the Jacobian of the five cross-check event probabilities
-with respect to (q, f, sigma). Run from the repository root: python tools/check_identifiability.py  (needs: pip install sympy)"""
+"""Proposition S1 of the Supplementary Material (identifiability): rank of the Jacobian of the five cross-check
+event probabilities with respect to (q, f, sigma).
+
+Run from the repository root:  python tools/check_identifiability.py   (needs sympy)"""
 import sympy as sp
 q, f, sg, p, a, r, p2 = sp.symbols("q f sigma p a rho p2", positive=True)
 def events(p):

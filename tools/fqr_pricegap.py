@@ -1,4 +1,4 @@
-"""Exploratory (1 Nov 2026): when does monitoring beat simply buying the fresh tool? FreshQA, real Phi-4 Mini verdicts."""
+"""Exploratory: when does monitoring beat simply buying the fresh tool? FreshQA, real Phi-4 Mini verdicts."""
 import os, itertools, json, numpy as np
 os.environ.setdefault("EREPLAN_FMAX", "0.95")
 from multiprocessing import Pool

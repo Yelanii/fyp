@@ -1,5 +1,5 @@
 """Checks the exact formulas in theory.py against the simulator's own random outcomes (env.Environment.call), and
-draws the figure for THEORY_2026-10-31.md.
+draws the figure of the region where checking does harm.
 
 The step logic below mirrors runner.py (retry on loud or flag; cross-check branch of rule v5), applied to one step
 at a time with fixed p, so every step index t of a long run is an independent replication.

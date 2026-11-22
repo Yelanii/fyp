@@ -1,4 +1,4 @@
-"""Core 1 (31 October 2026): FreshQA with a REAL LLM judge and REAL answer comparisons.
+"""Core 1: FreshQA with a REAL LLM judge and REAL answer comparisons.
 
 What is real and what is simulated
   real       questions and answers (FreshQA, Apache-2.0), which answers went stale between 24 Nov 2025 and
@@ -34,7 +34,7 @@ SEEDS = {"dev": tuple(range(2500, 2510)), "confirm": tuple(range(2510, 2530))}
 
 JUDGE_PROMPT = ("Today is {today}.\nQuestion: {q}\nProposed answer: {a}\n"
                 "Is the proposed answer correct and up to date as of today? Reply with one word: YES or NO.\nReply:")
-# Prompt variants. "dated" (first run, 31 Oct): the judge was told today's date; both Qwen models then said NO to
+# Prompt variants. "dated" (first run): the judge was told today's date; both Qwen models then said NO to
 # almost every answer, including never-changing facts, and gave the same verdict to the old and the new answer
 # (573/574 and 574/574 questions), so the verdict did not depend on the answer. "plain" asks only whether the answer is
 # correct, from the model's own knowledge. A variant is chosen by suffixing the model name, e.g. qwen2.5:3b@plain.
@@ -209,7 +209,7 @@ from .strategies import NeverCheck, REGISTRY as _REG
 
 
 class UseFreshTool(NeverCheck):
-    """Reference (1 Nov 2026): pay for the fresher tool B from the first call and never check. It answers the
+    """Reference: pay for the fresher tool B from the first call and never check. It answers the
     question 'is a monitoring rule worth having at all here, or should one simply buy the dearer tool?'."""
     name = "R_use_B"
 

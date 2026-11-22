@@ -1,4 +1,4 @@
-"""Core 4 (31 October 2026): cross-checking when two wrong outputs can agree (shared mistakes, sigma).
+"""Core 4: cross-checking when two wrong outputs can agree (shared mistakes, sigma).
 
 Usage: python -m ereplan.core4_exp dev        # development seeds 2600-2603
        python -m ereplan.core4_exp confirm    # seeds 2610-2629 (after PREREGISTRATION_core4.md)

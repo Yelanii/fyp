@@ -1,4 +1,4 @@
-"""Bayes-optimal comparator on a small instance (27 October 2026; requested by external review 3).
+"""Bayes-optimal comparator on a small instance.
 
 "Perfect-knowledge optimum" (B6) sees the hidden state, so it is not a fair reference for a rule that cannot.
 Here the BEST POSSIBLE policy for an agent that sees only what the rules see is computed exactly, by dynamic

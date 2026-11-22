@@ -1,4 +1,4 @@
-"""Rule v4+rho (31 October 2026, renamed 6 Nov 2026 to avoid clashing with the proposal's "rule v5.1" = FR19):
+"""Rule v4+rho (named so as not to clash with the proposal's "rule v5.1" = FR19):
 rule v5 (cross-check) that LEARNS the share of failures that are loud (rho) instead of assuming it. This is FR20, a
 different requirement from FR19's third-source/audit/fallback rule, which the proposal also calls "rule v5.1".
 
@@ -26,7 +26,7 @@ class LoudShareRule(CrossCheckRule):
 
     rho_mode = "cap"            # "mean": posterior mean; "cap": never above the default; "lcb": lower credible bound
 
-    audit_gain = 0.10           # extra random audits when failures turn out to be silent (development choice, 31 Oct)
+    audit_gain = 0.10           # extra random audits when failures turn out to be silent (development choice)
 
     def __init__(self, s, rng, rho_window=30, **kw):
         super().__init__(s, rng, **kw)

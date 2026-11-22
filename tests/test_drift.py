@@ -1,4 +1,4 @@
-"""Tests for the drift test's two simulator options (apply_drift.py) and its runner (run_drift.py)."""
+"""Tests for the drift test's two simulator options and its runner (run_drift.py)."""
 import os
 os.environ.setdefault("EREPLAN_NETPV", "1")
 import numpy as np

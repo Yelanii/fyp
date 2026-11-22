@@ -36,18 +36,18 @@ class Setting:
     prior_strength: float = 20.0 # pseudo-calls behind the advertised rate
     check_corr: float = 0.0      # 0 = independent check; c > 0: once a tool has degraded, its new silent
                                  # failures are caught with q * (1 - c) (the check shares the failure source)
-    false_alarm: float = 0.0     # f: chance that a check wrongly flags a CORRECT result (added 22 Oct 2026)
+    false_alarm: float = 0.0     # f: chance that a check wrongly flags a CORRECT result
     fa_persistent: bool = True   # True: a step the check gets wrong is flagged on every retry (as with a
                                  # deterministic LLM judge); False: each attempt is an independent draw
     fa_assumed: float = -1.0     # f the agent is told; -1 means "the true f"
-    fa_persistence: float = -1.0 # pi in [0, 1] (added 24 Oct 2026): chance that a retry or re-check of a step
+    fa_persistence: float = -1.0 # pi in [0, 1]: chance that a retry or re-check of a step
                                  # repeats the previous verdict instead of drawing a fresh one. -1 means
                                  # "use fa_persistent" (True -> 1.0, False -> 0.0), so older runs are unchanged.
-    xc_shared: float = 0.0       # Core 4 (31 Oct 2026): chance that two WRONG outputs agree on a cross-check (shared
+    xc_shared: float = 0.0       # Core 4: chance that two WRONG outputs agree on a cross-check (shared
                                  # mistakes, e.g. two tools that copy the same stale source). 0 = they never agree.
-    xc_noise: float = 0.0        # rule v5 stress test (27 Oct 2026): chance that a cross-check comparison reports the
+    xc_noise: float = 0.0        # rule v5 stress test: chance that a cross-check comparison reports the
                                  # wrong answer (agree <-> disagree), as with fuzzy text answers. 0 = exact comparison.
-    # --- FR19, rule v5.1 (6 Nov 2026) ---
+    # --- FR19, rule v5.1 ---
     third_source_frac: float = 0.0   # share of flagged, cross-checked calls that also query a third, independent
                                       # source (a different model family) before the two-source verdict is used
     third_q: float = -1.0            # third source's catch rate on a truly wrong output; -1 means "same as q_true"
@@ -57,7 +57,7 @@ class Setting:
     audit_frac: float = 0.0          # share of ALL checked calls where the true label is also bought (a small,
                                       # expensive labelled audit) and fed straight to the rule
     audit_price: float = -1.0        # price of one audited label; -1 means "same as mean_price"
-    # --- drift test (21 Nov 2026): the checker's rates change once during a run, at a step drawn per run from
+    # --- drift test: the checker's rates change once during a run, at a step drawn per run from
     # its own random stream (Environment.t_drift). -1 keeps the rate unchanged, so every earlier run is unchanged.
     q_late: float = -1.0             # catch rate from the change on
     f_late: float = -1.0             # false-alarm rate from the change on

@@ -1,4 +1,4 @@
-"""Core 2 (31 October 2026): rules v4 and v5 against three recent outside methods (ereplan/outside_baselines.py).
+"""Core 2: rules v4 and v5 against three recent outside methods (ereplan/outside_baselines.py).
 See PREREGISTRATION_core2.md.
 
 Usage:  python -m ereplan.core2_exp tune      # tune the outside baselines on development seeds 2400-2403

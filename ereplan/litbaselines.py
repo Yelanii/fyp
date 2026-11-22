@@ -1,5 +1,5 @@
-"""Part E (24 October 2026): a persistence-aware form of rule v4 and three baselines modelled on the closest
-works in the literature review (LR v3, Table 2.8). Each baseline adapts one published idea to this simulator;
+"""Part E: a persistence-aware form of rule v4 and three baselines modelled on the closest
+works in the literature. Each baseline adapts one published idea to this simulator;
 the adaptations are stated in PREREGISTRATION_persistence.md and below, so a reader can judge their fairness.
 
 Rule_v4_pi     Rule v4 with an assumed persistence pi_hat for false alarms. pi_hat = 1 is exactly rule v4 (the

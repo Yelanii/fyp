@@ -23,7 +23,7 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
     session_cap = params.pop("session_cap", 50)
     cls = REGISTRY[strategy_name]
     # FR20 confirmatory test only: a strategy can be handed a WRONG fixed belief about rho (the loud-failure
-    # share) while the environment keeps generating failures at the true s.rho. Added 9 Nov 2026; None (the
+    # share) while the environment keeps generating failures at the true s.rho. None (the
     # default) keeps the old behaviour -- strategy and environment share the same Setting -- for every
     # existing caller and test.
     rho_belief = params.pop("rho_belief", None)
@@ -35,9 +35,9 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
 
     spend = 0.0
     successes = leaks = unrecovered = checks = switches = false_switches = crossing_checks = false_alarms = 0
-    fa_failed = rechecks = paid_switches = 0               # added 24 Oct 2026 (part E)
-    crosschecks = fa_resolved = 0                          # added 27 Oct 2026 (rule v5)
-    third_checks = audits = fallback_calls = 0              # added 6 Nov 2026 (rule v5.1, FR19)
+    fa_failed = rechecks = paid_switches = 0               # part E
+    crosschecks = fa_resolved = 0                          # rule v5
+    third_checks = audits = fallback_calls = 0              # rule v5.1, FR19
     xcheck = bool(getattr(strat, "crosscheck", False))
     reverify_k = int(getattr(strat, "reverify_k", 0))
     ssv = bool(getattr(strat, "ssv", False))
@@ -100,7 +100,7 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
                     audits += 1
                     strat.observe_audit(checked, outcome, truly_correct)
                 if ssv and checked and outcome != "loud":
-                    # B13 (31 Oct 2026): SSV-style weak/strong verification (Kiyani et al., 2026). Only strategies
+                    # B13: SSV-style weak/strong verification (Kiyani et al., 2026). Only strategies
                     # with ssv = True reach this branch, so earlier results are unchanged.
                     flagged = outcome == "caught"
                     correct = truly_correct or outcome == "ok"
@@ -154,7 +154,7 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
                         step_ok = True
                         break
                 if outcome == "caught" and xcheck and checked:
-                    # rule v5 / B12 (27 Oct 2026): run the flagged step on the alternative tool and compare outputs.
+                    # rule v5 / B12: run the flagged step on the alternative tool and compare outputs.
                     # Only strategies with crosscheck = True reach this branch, so earlier results are unchanged.
                     j = strat.crosscheck_tool(ctx)
                     a_hat = strat.alt_mean(j)
@@ -166,7 +166,7 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
                         strat.observe(cur, checked, True, kind="flag_altloud", a=a_hat)
                         continue                                # no comparison possible: retry as before
                     agree = truly_correct and alt == "ok"
-                    if env_agree:                               # real comparison of the two answers (Core 1, 31 Oct)
+                    if env_agree:                               # real comparison of the two answers (Core 1)
                         agree = env.agree(cur, j, t, truly_correct, alt)
                     elif s.xc_shared > 0 and not truly_correct and alt == "leak" and \
                             _rng("xcshared", scenario, seed, t, attempt).random() < s.xc_shared:
@@ -241,13 +241,13 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
         false_switches_per_1000=1000.0 * false_switches / n,
         leak_rate=leaks / n, switch_delay=delay,
         crossing_share=(crossing_checks / checks) if checks else math.nan,
-        # part E (24 Oct 2026): cost split and false-alarm effects
+        # part E: cost split and false-alarm effects
         fa_failed_rate=fa_failed / n, rechecks_per_task=rechecks / n,
         switch_spend_per_task=s.switch_cost * paid_switches / n,
         tool_check_spend_per_task=(spend - s.switch_cost * paid_switches) / n,
         leak_cost_per_task=s.leak_loss * leaks / n, fail_cost_per_task=s.task_cost * unrecovered / n,
-        crosschecks_per_task=crosschecks / n, fa_resolved_per_task=fa_resolved / n,   # rule v5 (27 Oct 2026)
-        third_checks_per_task=third_checks / n, audits_per_task=audits / n,            # rule v5.1 (6 Nov 2026)
+        crosschecks_per_task=crosschecks / n, fa_resolved_per_task=fa_resolved / n,   # rule v5
+        third_checks_per_task=third_checks / n, audits_per_task=audits / n,            # rule v5.1
         fallback_share=fallback_calls / checks if checks else math.nan,
     )
     cm = getattr(strat, "cm", None)
@@ -256,9 +256,9 @@ def run(strategy_name: str, params: dict, s: Setting, scenario: str, seed: int,
     sigma_hat = getattr(strat, "sigma_hat", None)
     if sigma_hat is not None:
         out["sigma_hat"] = sigma_hat
-    if hasattr(strat, "retests"):                           # FR18 (added 10 Nov 2026)
+    if hasattr(strat, "retests"):                           # FR18
         out["retests"] = strat.retests
-    rho_hat = getattr(strat, "rho_hat", None)               # FR20 (added 9 Nov 2026)
+    rho_hat = getattr(strat, "rho_hat", None)               # FR20
     if rho_hat is not None:
         out["rho_hat"] = rho_hat
     if record:

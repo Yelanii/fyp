@@ -1,4 +1,4 @@
-"""Core 3 (31 October 2026): exact one-step losses of checking under persistent false alarms.
+"""Core 3: exact one-step losses of checking under persistent false alarms.
 
 One step of a task, on one tool. Each attempt costs w (tool price) plus c if it is checked. An attempt is
     correct        with probability p
@@ -17,7 +17,8 @@ Policies on the step:
        agree -> keep the output; disagree -> use the alternative's output; alternative loud -> retry.
        Two wrong outputs never agree.
 
-All three are computed exactly by a forward pass over (attempt b, verdict state I_b); see THEORY_2026-10-31.md.
+All three are computed exactly by a forward pass over (attempt b, verdict state I_b); the derivation is in the
+Supplementary Material of the paper.
 """
 from dataclasses import dataclass, replace
 

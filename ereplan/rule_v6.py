@@ -1,4 +1,4 @@
-"""Rule v6 (FR18, built 10 November 2026): rule v5 that RE-TESTS a tool it has left.
+"""Rule v6 (FR18): rule v5 that RE-TESTS a tool it has left.
 
 Rule v5 remembers a tool it switched away from as bad for ever: the tool gets no new calls, so its estimate never
 changes. That is right when a degraded tool stays degraded, and wrong when it is repaired, or when the tool switched

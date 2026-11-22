@@ -1,4 +1,4 @@
-"""D1 step 1: live tool services backed by real local models (see claude/D1_Design_2026-11-16.md).
+"""D1 step 1: live tool services backed by real local models (see PREREGISTRATION_D1.md).
 
 What this file is
 -----------------

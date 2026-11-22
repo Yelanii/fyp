@@ -1,4 +1,4 @@
-"""Progress demo page for the supervisor (1 November 2026).
+"""Progress summary page.
 
 Recomputes every number from the saved raw results and writes one self-contained HTML page:
     python -m ereplan.progress_demo          ->  results/Hanwella_Progress_Demo.html

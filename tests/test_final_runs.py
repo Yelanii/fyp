@@ -1,4 +1,4 @@
-"""Tests for the 10 Nov 2026 confirmatory drivers: FR11 (CostBench with real-checker rates) and the FreshQA test."""
+"""Tests for the confirmatory drivers FR11 (CostBench with real-checker rates) and the FreshQA test."""
 import os
 os.environ.setdefault("EREPLAN_FMAX", "0.95")
 import run_fr11

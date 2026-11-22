@@ -1,4 +1,4 @@
-"""Tests for rule v5 (27 Oct 2026): label-free checker learning and cross-checking."""
+"""Tests for rule v5: label-free checker learning and cross-checking."""
 import numpy as np
 
 from ereplan.config import Setting

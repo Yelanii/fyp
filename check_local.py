@@ -1,4 +1,4 @@
-"""Check this machine before running anything (10 Nov 2026).
+"""Check this machine before running anything.
 
     python check_local.py            # data files, Python packages, Ollama models
     python check_local.py --live 20  # also re-judge 20 FreshQA questions per judge with YOUR Ollama models and
@@ -8,7 +8,7 @@ Nothing is downloaded and no saved file is changed.
 """
 import argparse, hashlib, json, os, sys, urllib.request
 
-MODELS = ("qwen2.5:1.5b", "qwen2.5:3b", "phi4-mini", "llama3.1:8b")
+MODELS = ("qwen2.5:1.5b", "qwen2.5:3b", "phi4-mini", "llama3.1:8b", "llama3.2:3b")
 JUDGES = ("phi4-mini@plain", "llama3.1:8b@plain")
 OLLAMA = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 ok = True

@@ -17,6 +17,7 @@ The four model-based measurements (Studies M and M2 and the two GSM8K agent expe
 their scripts again, which read every model answer from the cache; see docs/REPRODUCING.md.
 """
 import argparse, glob, json, os, random, subprocess, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "experiments"))   # the experiment scripts
 
 # key: (paper experiment, results folder pattern, which folder if several, EREPLAN_FMAX, EREPLAN_NETPV)
 SPECS = {

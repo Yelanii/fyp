@@ -1,4 +1,4 @@
-"""Rule v4: the self-calibrating rule (v3) that also accounts for FALSE ALARMS (added 22 October 2026).
+"""Rule v4: the self-calibrating rule (v3) that also accounts for FALSE ALARMS.
 
 Motivation (real-agent Run 2): a real LLM checker wrongly flagged 14% of correct steps, and because it is
 deterministic it flagged them again on every retry, so checked tasks failed. Rules v2/v3 assume checks never

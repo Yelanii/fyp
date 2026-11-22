@@ -1,4 +1,4 @@
-"""Rule v5 pilot (27 October 2026): learning the checker without labels, and cross-checking flagged steps.
+"""Rule v5 pilot: learning the checker without labels, and cross-checking flagged steps.
 See PREREGISTRATION_v5.md.
 
 Usage:  python -m ereplan.v5_exp dev        # smoke test on development seeds 1600-1605 (no tuning)
@@ -25,10 +25,10 @@ STRATS = {
     "v4": ("Rule_v4_fa", dict(V4), "true"),            # pre-registered rule v4: told q and f, retries a flagged step
     "v4_nocal": ("Rule_v4_fa", dict(V4), "none"),      # rule v4 without calibration: assumes f = 0, q prior mean 0.5
     "v4_miscal": ("Rule_v4_fa", dict(V4), "wrong"),    # rule v4 told wrong values: q - 0.15, f / 2
-    "always_x": ("B12_always_x", dict(window=30), "true"),   # reviewers' cross-check baseline
+    "always_x": ("B12_always_x", dict(window=30), "true"),   # cross-check baseline
     "v5_told": ("Rule_v5_told", dict(SESSION), "true"),       # ablation: cross-check, but told q and f
     "v5": ("Rule_v5_x", dict(SESSION), "none"),               # rule v5: cross-check, learns q and f, no labels
-    "v5_rho": ("Rule_v5_rho", dict(SESSION), "none"),         # rule v4+rho (31 Oct, renamed 6 Nov): cross-check that also learns the loud share rho (FR20)
+    "v5_rho": ("Rule_v5_rho", dict(SESSION), "none"),         # rule v4+rho: cross-check that also learns the loud share rho (FR20)
     "v5_rho_noaudit": ("Rule_v5_rho_noaudit", dict(SESSION), "none"),  # development variant: learns rho, no extra audits
 }
 

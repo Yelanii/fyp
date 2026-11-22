@@ -1,4 +1,4 @@
-"""Feasibility check (28 October 2026, EXPLORATORY, not pre-registered): what happens when the alternative tool can
+"""Feasibility check (EXPLORATORY, not pre-registered): what happens when the alternative tool can
 degrade too? Until now every experiment let only the primary tool A degrade.
 
 Tools: A (price 20), B (24), C premium (30, stays at 97%). Scenarios:

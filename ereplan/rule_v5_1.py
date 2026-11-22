@@ -1,7 +1,7 @@
-"""Rule v5.1 (FR19, built 6 Nov 2026): rule v5's cross-check, made robust to shared mistakes.
+"""Rule v5.1 (FR19): rule v5's cross-check, made robust to shared mistakes.
 
 Rule v5 (crosscheck.py) and its sigma-aware variant (rule_v5s.py, Core 4) learn the checker's (q, f, sigma)
-without labels, but CORE4_2026-10-31.md shows that with only two sources (the original tool and the alternative
+without labels, but with only two sources (the original tool and the alternative
 it is cross-checked against), (q, f, sigma) are NOT identifiable from one success-rate regime: the information
 matrix has rank 2 of the 3 unknowns. A third, conditionally-independent source restores identifiability (Allman,
 Matias and Rhodes, 2009): with three sources judging the same item, their agreement patterns pin down each
@@ -22,8 +22,7 @@ This rule adds two label-free-compatible mechanisms, plus a fallback:
    three-source tensor estimator (which would jointly solve for all of q, f, sigma from the triple-wise agreement
    rates); it captures the same identifying information with far less machinery, at the cost of needing f from
    elsewhere (the audit below, or the cross-check memory's own f_mean before it is trusted). This simplification,
-   and the fallback threshold below, are design choices that need the supervisor's sign-off (see README decision
-   log) -- they are not derived from the proposal's formulas.
+   and the fallback threshold below, are design choices; they are not derived from the proposal's formulas.
 
 2. A SMALL LABELLED AUDIT (Setting.audit_frac of ALL checked calls; proposal default small, e.g. 0.02-0.05). A
    rare true label is bought (at audit_price) and used directly to estimate q and f from counts. This is the
@@ -32,7 +31,7 @@ This rule adds two label-free-compatible mechanisms, plus a fallback:
 
 3. FALLBACK TO RULE v4's DECISION. Once enough evidence has accumulated (min_evidence observations between the
    third source and the audit) and sigma_hat is at or above fallback_sigma, the rule judges the cross-check
-   unreliable (Proposition 3 in CORE4_2026-10-31.md: a FIXED cross-check policy's loss does not even depend on
+   unreliable (rule_v5s.py, fact 1: a FIXED cross-check policy's loss does not even depend on
    sigma once shared mistakes are this common, so there is nothing left to gain from trusting it) and switches
    its DECISION formula to use the audited q directly, with no false-alarm-cost term, exactly like rule v4's
    simpler protection-value-only check (see _v4_wants_check). The cross-check keeps running underneath (so
@@ -55,7 +54,7 @@ class Rule_v5_1(CrossCheckRuleS):
 
     third_shared_belief = 0.08        # DESIGN CHOICE: the rule's own conservative belief about how often a third
                                        # source from a different model family reproduces a shared mistake. Not
-                                       # read from the environment; needs supervisor sign-off (see docstring).
+                                       # read from the environment (see docstring).
     fallback_sigma = 0.35             # DESIGN CHOICE: sigma_hat at or above this triggers the v4 fallback.
     min_evidence = 8                  # minimum third-source + audit observations before fallback can trigger
 

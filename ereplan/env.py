@@ -36,14 +36,14 @@ def true_rates(setting: Setting, scenario: str, seed: int) -> np.ndarray:
         level = float(scenario.split("_")[1])
         t0 = int(r.integers(150, 350))
         p[a, t0:] = level
-    # 21 Nov 2026 (drift test): "ramp_<level>": tool A declines linearly from its base rate to <level> over 200
+    # Drift test: "ramp_<level>": tool A declines linearly from its base rate to <level> over 200
     # calls, starting at the step where "drop_<level>" drops on the same seed. Only this new name uses it.
     elif scenario.startswith("ramp_"):
         level = float(scenario.split("_")[1])
         t0 = int(_rng("scenario", f"drop_{level:.2f}", seed).integers(150, 350))
         ramp = np.clip((np.arange(T) - t0) / 200.0, 0.0, 1.0)
         p[a] = p[a, 0] - (p[a, 0] - level) * ramp
-    # 10 Nov 2026 (boundary map): "pdrop_<level>@p<NN>": tool A drops to <level> in only NN% of runs. Own random
+    # Boundary map: "pdrop_<level>@p<NN>": tool A drops to <level> in only NN% of runs. Own random
     # streams, so every earlier scenario is unchanged.
     elif scenario.startswith("pdrop_"):
         level, pp = scenario[6:].split("@p")
@@ -51,7 +51,7 @@ def true_rates(setting: Setting, scenario: str, seed: int) -> np.ndarray:
         t0 = int(rb.integers(150, 350))
         if rb.random() < int(pp) / 100.0:
             p[a, t0:] = float(level)
-    # 10 Nov 2026 (FR18, any tool can degrade): which tool degrades is random, so no tool is reliably better.
+    # FR18 (any tool can degrade): which tool degrades is random, so no tool is reliably better.
     elif scenario.startswith("any_"):
         rn = _rng("any_scenario", scenario, seed)
         order = rn.permutation(K)
@@ -65,7 +65,7 @@ def true_rates(setting: Setting, scenario: str, seed: int) -> np.ndarray:
             p[order[0], t0:t0 + 200] = 0.60
         else:
             raise ValueError(f"unknown scenario {scenario}")
-    # feasibility scenarios (28 Oct 2026, exploratory): the alternative can degrade too. Own random stream, so
+    # feasibility scenarios (exploratory): the alternative can degrade too. Own random stream, so
     # every earlier scenario is unchanged.
     elif scenario.startswith("alt_"):
         ra = _rng("alt_scenario", scenario, seed)
@@ -107,7 +107,7 @@ class Environment:
         self.u_catch = r.random((K, T, A))
         # separate stream, so adding false alarms leaves every earlier random draw unchanged
         self.u_fa = _rng("falsealarm", scenario, seed).random((T, A))
-        # partial persistence (24 Oct 2026): with probability pi a retry repeats the previous verdict on the
+        # partial persistence: with probability pi a retry repeats the previous verdict on the
         # step, otherwise it draws afresh. pi = 1 and pi = 0 reproduce the persistent and independent cases
         # exactly, because new streams are used only when 0 < pi < 1.
         self.pi = setting.pi_true
@@ -121,7 +121,7 @@ class Environment:
         KR = 3
         self.u_rp = _rng("recheck_persist", scenario, seed).random((T, A, KR))
         self.u_rf = _rng("recheck_fresh", scenario, seed).random((K, T, A, KR))
-        # drift test (21 Nov 2026): the step at which the checker's rates change. Own random stream, drawn only
+        # drift test: the step at which the checker's rates change. Own random stream, drawn only
         # when a late rate is set (Setting.q_late, f_late), so every earlier run is unchanged.
         self.t_drift = None
         if getattr(setting, "q_late", -1.0) >= 0 or getattr(setting, "f_late", -1.0) >= 0:

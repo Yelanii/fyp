@@ -1,4 +1,4 @@
-"""FreshQA-grounded feasibility check (31 October 2026, EXPLORATORY, not pre-registered).
+"""FreshQA-grounded feasibility check (EXPLORATORY, not pre-registered).
 
 Natural degradation instead of simulated drops. Tool A answers from the FreshQA snapshot of 24 Nov 2025 (price 20);
 tool B answers from the 21 Apr 2026 snapshot (price 24); tool C is a premium service (price 30). Questions are real

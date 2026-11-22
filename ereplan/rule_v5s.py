@@ -1,7 +1,7 @@
-"""Core 4 (31 October 2026): rule v5 when two wrong outputs can agree (shared mistakes).
+"""Core 4: rule v5 when two wrong outputs can agree (shared mistakes).
 
 Rule v5 reads an agreement after a flag as "the flag was a false alarm". If two tools can be wrong in the same way
-(chance sigma), some agreements are really two matching wrong answers. Two facts (CORE4_2026-10-31.md):
+(chance sigma), some agreements are really two matching wrong answers. Two facts:
   1. For a FIXED cross-check policy, sigma does not change the loss: a caught failure whose alternative is also
      wrong leaks whether the outputs agree (the original is kept) or not (the alternative is used).
   2. It does change what the rule LEARNS: agreements are counted as false alarms, so f is overestimated, q and the

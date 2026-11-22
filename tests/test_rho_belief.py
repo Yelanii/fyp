@@ -1,4 +1,4 @@
-"""Tests for the FR20 confirmatory-test plumbing added 9 Nov 2026: run()'s rho_belief override (a strategy can be
+"""Tests for the FR20 confirmatory-test plumbing: run()'s rho_belief override (a strategy can be
 handed a WRONG fixed belief about the loud-failure share while the environment keeps the true s.rho) and the
 rho_hat field in run()'s output for rules that learn it (ereplan/rule_rho.py)."""
 from ereplan.config import Setting

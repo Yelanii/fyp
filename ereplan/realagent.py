@@ -160,7 +160,7 @@ answer = r3
 
 Problem: {q}
 """
-# Version 2 of the planner prompt (22 October 2026): two invented worked examples were added after the
+# Version 2 of the planner prompt: two invented worked examples were added after the
 # zero-shot prompt solved only 13% of problems in a trial run. Only planner output had been seen; no
 # judge or strategy result existed yet. The examples are made up and are not GSM8K problems.
 
@@ -266,7 +266,7 @@ JUDGE_PROMPT = """Check this calculation carefully.
 Is the result correct? Reply with exactly one word: correct or wrong.
 """
 
-# Second judge (Amendment 2, 22 October 2026): the model recomputes the expression itself and the check
+# Second judge (Amendment 2): the model recomputes the expression itself and the check
 # flags a mismatch. Run 1 showed the yes/no judge answering "wrong" to 94% of CORRECT results.
 RECOMPUTE_PROMPT = """Calculate: {expr}
 Reply with only the final number. No words, no units, no working.
@@ -393,7 +393,7 @@ def run_one(tasks, judge, strat_key, seed, drop, q_assumed, check_frac, leak_mul
 
     spend = leaks = unrec = checks = 0.0
     fa_events = reflag_pairs = reflag_hits = 0                # part E3: false alarms seen inside the loop
-    xchecks = fa_resolved = 0                                  # rule v5 (27 Oct 2026): cross-checks of flagged steps
+    xchecks = fa_resolved = 0                                  # rule v5: cross-checks of flagged steps
     xcheck = bool(getattr(st, "crosscheck", False))
     t = 0
     for i in order:

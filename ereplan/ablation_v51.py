@@ -1,4 +1,4 @@
-"""FR21 ablation (9 Nov 2026): rule v5.1 (the full proposed rule) with one of its five ingredients removed at a
+"""FR21 ablation: rule v5.1 (the full proposed rule) with one of its five ingredients removed at a
 time, as C5 in the proposal promises: the false-alarm term, persistence, change detection, switching, and
 label-free learning. Four of the five are separate strategy classes below; the fifth (change detection) needs no
 new class -- it is run as Rule_v5_1 itself with an effectively infinite window (see run_ablation.py), so the

@@ -176,7 +176,7 @@ def test_rule_v4_reduces_to_v3_likelihood_when_f_is_zero():
     assert np.allclose(a.joint(), b.joint())
 
 
-# ----------------------------------------------------------------------------- part E (24 October 2026)
+# ----------------------------------------------------------------------------- part E
 def test_persistence_dial_endpoints_reproduce_old_cases():
     for old, pi in ((True, 1.0), (False, 0.0)):
         a = Environment(Setting(false_alarm=0.15, fa_persistent=old), "drop_0.75", 7)

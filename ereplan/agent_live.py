@@ -1,4 +1,4 @@
-"""D1: the rule on live model-backed tools with NATURAL silent degradation (20 Nov 2026). See PREREGISTRATION_D1.md.
+"""D1: the rule on live model-backed tools with NATURAL silent degradation. See PREREGISTRATION_D1.md.
 
 What is real here (unlike realagent.py, whose calculator faults are injected):
 - the tools are solver services backed by real models (tools_live.SolverService);

@@ -1,4 +1,4 @@
-"""Exploratory (1 Nov 2026): FreshQA, real judge verdicts; tool A goes stale in only a share of runs."""
+"""Exploratory: FreshQA, real judge verdicts; tool A goes stale in only a share of runs."""
 import os, numpy as np
 from multiprocessing import Pool
 from ereplan import freshqa_real as fr

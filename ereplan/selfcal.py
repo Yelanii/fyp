@@ -97,7 +97,7 @@ class SelfCalibratingRule(LeakAwareRule):
         c = self.s.eff_price(cur)
         sw = R_alt + self.s.switch_cost
         pbar = float((w.sum(axis=1) * PG[:, 0]).sum())
-        # dv_sym (19 Nov 2026, PREREGISTRATION_dvsym.md): price staying with the same per-call cost as the switch
+        # dv_sym (PREREGISTRATION_dvsym.md): price staying with the same per-call cost as the switch
         # line, g(c, p) = c/p + (1-p)(1-rho)L, instead of c/p only. Off by default, so every earlier result is unchanged.
         sym = getattr(self, "dv_sym", False)
         stay = (lambda m: u * (c / max(m, 1e-6) + (1 - m) * (1 - self.s.rho) * self.s.leak_loss)) if sym else \

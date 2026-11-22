@@ -1,6 +1,6 @@
-"""Rule v5 (27 October 2026): a label-free, cross-checking rule.
+"""Rule v5: a label-free, cross-checking rule.
 
-Problem it solves (external reviews, 27 Oct 2026): rule v4 must be TOLD the checker's catch rate q and false-alarm
+Problem it solves: rule v4 must be TOLD the checker's catch rate q and false-alarm
 rate f, measured on labelled calibration tasks, and it handles a flag by retrying the same tool, so a checker that
 repeats its false alarms fails correct work.
 
@@ -36,7 +36,7 @@ from .strategies import CheckAlways, REGISTRY
 NETPV = os.environ.get("EREPLAN_NETPV") == "1"
 
 import os as _os
-# False-alarm grid. Default 0..0.5 (all experiments up to 31 Oct 2026). Real FreshQA judges have f up to about 0.8,
+# False-alarm grid. Default 0..0.5 (the simulator experiments). Real FreshQA judges have f up to about 0.8,
 # so that experiment sets EREPLAN_FMAX=0.95; the step stays 0.02 and every earlier result is unchanged.
 FMAX = float(_os.environ.get("EREPLAN_FMAX", "0.5"))
 FG = np.linspace(0.0, FMAX, int(round(FMAX / 0.02)) + 1)
@@ -201,7 +201,7 @@ class CrossCheckRule(SelfCalibratingRule):
         return mean * f * (s.eff_price(j) + (1 - a) * (1 - s.rho) * s.leak_loss
                            + (1 - a) * s.rho * (s.eff_price(ctx["cur"]) + s.check_price))
 
-    # Net protection value (16 Nov 2026). With net = False the rule is exactly the one evaluated up to 15 Nov:
+    # Net protection value. With net = False the rule is exactly the one evaluated before the correction:
     # it counts the whole wrong-answer loss as saved by a catch (gross PV). With net = True it also subtracts the
     # cost of resolving a caught failure by the cross-check, q s R, which is the consistent one-step criterion
     #     q s (L - R) + DV - p f R >= check price,   s = (1-p)(1-rho),
@@ -268,7 +268,7 @@ class CrossCheckRuleTold(CrossCheckRule):
 
 
 class AlwaysCrossCheck(CheckAlways):
-    """Baseline (reviewers' 'cross-check' suggestion): check every call; cross-check every flag on the alternative."""
+    """Baseline: check every call; cross-check every flag on the alternative."""
     name = "B12_always_x"
     crosscheck = True
 

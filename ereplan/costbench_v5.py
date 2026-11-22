@@ -1,6 +1,6 @@
-"""Rules v4 and v5 on CostBench-derived tasks (28 October 2026). See PREREGISTRATION_costbench_v5.md.
+"""Rules v4 and v5 on CostBench-derived tasks. See PREREGISTRATION_costbench_v5.md.
 
-The first CostBench evaluation (costbench_exp.py, 21 Oct) tested rule v2 with a perfect checker. This one adds what
+The first CostBench evaluation (costbench_exp.py) tested rule v2 with a perfect checker. This one adds what
 the later rules were built for: a checker that sometimes flags a CORRECT result (false alarm, rate f), which may
 repeat its verdict on a retry (persistence pi), and the cross-check that rule v5 uses to resolve a flag.
 
@@ -167,7 +167,7 @@ class RuleV5CB(_Joint):
         return mean * self.cm.f_mean * (alt + (1 - a) * (1 - RHO) * self.w.L + (1 - a) * RHO * (price + self.w.check_price))
 
     def catch_cost(self, i, ri, name, price, mean, q):
-        """Net protection value (16 Nov 2026): cost of resolving a caught failure by the cross-check."""
+        """Net protection value: cost of resolving a caught failure by the cross-check."""
         if not NETPV:
             return 0.0
         a = P_OK
@@ -189,7 +189,7 @@ class RuleV5ToldCB(RuleV5CB):
 
 
 class _Old:
-    """Adapter for the 21 Oct strategies: a flag counts as a failure seen (they cannot tell a false alarm)."""
+    """Adapter for the earlier strategies: a flag counts as a failure seen (they cannot tell a false alarm)."""
     def __init__(self, inner):
         self.inner = inner
 
@@ -211,7 +211,7 @@ STRATS = {
     "never": lambda w, s: _Old(Never(w, s)),
     "always": lambda w, s: _Old(Always(w, s)),
     "cusum": lambda w, s: _Old(Cusum(w, s)),
-    "v2": lambda w, s: _Old(RuleV2(w, s)),          # the rule confirmed on CostBench on 21 Oct (perfect-checker design)
+    "v2": lambda w, s: _Old(RuleV2(w, s)),          # the rule confirmed in the first CostBench evaluation (perfect-checker design)
     "v4": RuleV4CB,                                  # told q and f
     "v4_nocal": RuleV4NoCal,                         # no calibration labels
     "always_x": lambda w, s: AlwaysX(Always(w, s)),  # check everything, cross-check every flag

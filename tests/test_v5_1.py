@@ -1,4 +1,4 @@
-"""Tests for rule v5.1 (FR19, 6 Nov 2026): the third source, the labelled audit, and the v4 fallback."""
+"""Tests for rule v5.1 (FR19): the third source, the labelled audit, and the v4 fallback."""
 import numpy as np
 
 from ereplan.config import Setting

@@ -1,4 +1,4 @@
-"""Tests for rule v6 (FR18, 10 Nov 2026), the any-tool scenarios and the fixed-tool references."""
+"""Tests for rule v6 (FR18), the any-tool scenarios and the fixed-tool references."""
 import numpy as np
 from ereplan.config import Setting
 from ereplan.env import true_rates

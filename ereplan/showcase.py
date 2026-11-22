@@ -1,4 +1,4 @@
-"""Five-minute demonstration for the supervisor (24 October 2026).
+"""Five-minute demonstration of the rule.
 
     python -m ereplan.showcase
 

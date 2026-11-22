@@ -1,4 +1,4 @@
-"""Core 2 (31 October 2026): baselines from three recent outside methods, adapted to the simulator.
+"""Core 2: baselines from three recent outside methods, adapted to the simulator.
 
 Each class adapts one published method. What is kept and what had to change is listed here, so a reader can judge
 fairness. Their free parameters are tuned on development seeds (core2_exp.py), while rules v4 and v5 keep the

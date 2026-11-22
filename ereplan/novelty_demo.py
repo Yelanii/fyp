@@ -1,11 +1,11 @@
-"""Novelty demonstration for the supervisor (deadline 1 November 2026).
+"""Demonstration of the main findings.
 
     python -m ereplan.novelty_demo            # about 2-4 minutes on a laptop; no Ollama needed (saved real answers)
     python -m ereplan.novelty_demo --live     # Act 1 also asks the real checker through Ollama, right now
     python -m ereplan.novelty_demo --quick    # smaller live spot checks (about 1 minute)
 
-Eight acts (acts 5-6 added 27 Oct 2026: rule v5 and the Bayes-optimal comparison; acts 7-8 added 28 Oct 2026:
-CostBench with rules v4/v5, and the alternative-degrades feasibility check). Each act:
+Eight acts (acts 5-6: rule v5 and the Bayes-optimal comparison; acts 7-8: CostBench with rules v4/v5, and the
+alternative-degrades feasibility check). Each act:
   1. states the claim and the gap it answers;
   2. RUNS THE CODE NOW on a sample of the pre-registered runs and shows the result is identical to the saved run
      (so the saved results really come from this code);
@@ -382,7 +382,7 @@ def act4(rep, quick):
             "Simulation; the effect is strong when wrong answers are costly (3 tasks) and small when they cost 1 task.")
 
 
-# ============================================================================ ACT 5 (added 27 Oct 2026)
+# ============================================================================ ACT 5
 def act5(rep, quick):
     from . import v5_exp as V
     hr("=")
@@ -442,12 +442,12 @@ def act5(rep, quick):
         body += f"<p class='note'><b>Real checkers:</b><br>{real_note}</p>"
     rep.add("C5", "New method: learn the checker without labels (rule v5)", "Cross-checking a flagged step on a second tool "
             "gives free labels; rule v5 learns the checker's false-alarm rate from them and needs no labelled calibration.",
-            "Reviewers: rule v4 needed labelled calibration and its false-alarm cost came from retrying.", body, verdict, ok,
+            "Rule v4 needed labelled calibration and its false-alarm cost came from retrying.", body, verdict, ok,
             "Simulation, plus real checkers on simulated tool faults; cross-checking assumes a second tool whose output can be "
             "compared (part C tests comparisons that are sometimes wrong).")
 
 
-# ============================================================================ ACT 6 (added 27 Oct 2026)
+# ============================================================================ ACT 6
 def act6(rep, quick):
     from . import bayes_exp as B
     hr("=")
@@ -481,11 +481,11 @@ def act6(rep, quick):
     body = f"<p class='check'>{spot_line(same, len(sample))}</p>" + table_html(
         ["Strategy", "Mean loss", "Regret vs Bayes-optimal"], [(k, f"{v:.2f}", f"{d:+.1f}%") for k, v, d in res] + [("Bayes-optimal", f"{bay.mean():.2f}", "0")])
     rep.add("C6", "Distance to the best possible policy", "On a small instance solved exactly, the one-step rule v4 comes close to "
-            "the Bayes-optimal policy, which sees only what the rules see.", "Reviewer 3: the perfect-knowledge optimum is the wrong reference.",
+            "the Bayes-optimal policy, which sees only what the rules see.", "The perfect-knowledge optimum is the wrong reference.",
             body, verdict, ok, "Small instance only (two tools, single-step tasks, no retries); the Bayes policy is told the model.")
 
 
-# ============================================================================ ACT 7 (added 28 Oct 2026)
+# ============================================================================ ACT 7
 def act7(rep, quick):
     from . import costbench_v5 as CB
     hr("=")
@@ -519,7 +519,7 @@ def act7(rep, quick):
     body = f"<p class='check'>{spot_line(same, n)}</p>" + table_html(["Strategy", "Mean total loss"], [(k, f"{v:.1f}") for k, v in res])
     rep.add("C7", "The rules hold on CostBench", "On real CostBench tasks and prices, with a checker that raises false alarms, "
             "false-alarm-aware checking beats the earlier rule and selective checking beats checking everything.",
-            "Reviewers: the newest rules had not been tested on the main benchmark.", body, verdict, ok,
+            "The newest rules had not been tested on the main benchmark.", body, verdict, ok,
             "CostBench tasks and prices are real; the degradation and the checker are simulated. Never checking is only about 2% worse "
             "on CostBench, because a near-free route around the bad tool exists.")
 
@@ -565,7 +565,7 @@ def act7(rep, quick):
             "the effect on fresh seeds (-5.2%) is smaller than on development seeds (-8 to -10%).")
 
 
-# ============================================================================ ACT 8 (added 28 Oct 2026)
+# ============================================================================ ACT 8
 def act8(rep, quick):
     from . import alt_feasibility as AF
     hr("=")
