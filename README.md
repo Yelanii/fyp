@@ -57,15 +57,15 @@ check_local.py      checks the data files, Python packages and Ollama models on 
 
 The main modules of `ereplan/`:
 
-| Module | Contents |
-|---|---|
-| `crosscheck.py` | The proposed rule (`Rule_v5_x`): learns the checker's catch and false-alarm rates without labels and resolves flags by cross-checking |
-| `selfcal.py`, `strategies.py`, `estimator.py` | The switch line, the check criterion and the windowed estimate of each tool's success rate that the rule builds on |
-| `env.py`, `runner.py`, `config.py` | The simulator: tools, prices, degradation scenarios and checkers |
-| `tools_live.py`, `agent_live.py` | Live tool services backed by local models, and the agent that uses them |
-| `realagent.py` | GSM8K agent in which a local model plans the tool calls and real models check the results |
-| `litbaselines.py`, `outside_baselines.py`, `bayes_opt.py` | Baselines adapted from published methods, and a Bayes-optimal comparator |
-| `theory.py`, `theory_check.py` | Exact losses of checking under repeated false alarms, checked against the simulator |
+| Module                                                    | Contents                                                                                                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `crosscheck.py`                                           | The proposed rule (`Rule_v5_x`): learns the checker's catch and false-alarm rates without labels and resolves flags by cross-checking |
+| `selfcal.py`, `strategies.py`, `estimator.py`             | The switch line, the check criterion and the windowed estimate of each tool's success rate that the rule builds on                    |
+| `env.py`, `runner.py`, `config.py`                        | The simulator: tools, prices, degradation scenarios and checkers                                                                      |
+| `tools_live.py`, `agent_live.py`                          | Live tool services backed by local models, and the agent that uses them                                                               |
+| `realagent.py`                                            | GSM8K agent in which a local model plans the tool calls and real models check the results                                             |
+| `litbaselines.py`, `outside_baselines.py`, `bayes_opt.py` | Baselines adapted from published methods, and a Bayes-optimal comparator                                                              |
+| `theory.py`, `theory_check.py`                            | Exact losses of checking under repeated false alarms, checked against the simulator                                                   |
 
 The proposed rule is used with the corrected check criterion (`EREPLAN_NETPV=1`) in every result reported in the
 paper. The experiment scripts set this themselves.
@@ -75,8 +75,8 @@ paper. The experiment scripts set this themselves.
 Python 3.11 or later is required.
 
 ```bash
-git clone https://github.com/Yelanii/fyp.git
-cd fyp
+git clone https://github.com/Yelanii/when-to-pay-for-a-check.git
+cd when-to-pay-for-a-check
 python -m venv .venv
 .venv\Scripts\Activate.ps1          # Windows PowerShell
 # source .venv/bin/activate         # macOS or Linux
@@ -108,11 +108,11 @@ and Windows 11, with Python 3.13 and Ollama 0.40.16, and without a graphics proc
 
 ## Data
 
-| Dataset | Used for | File | Source and license |
-|---|---|---|---|
-| GSM8K | Maths word problems for the model-backed tools and checkers | `data/raw/gsm8k_test.jsonl` | Cobbe et al. (2021), [openai/grade-school-math](https://github.com/openai/grade-school-math), MIT (`data/raw/GSM8K_LICENSE.txt`) |
-| FreshQA | Stale knowledge: 574 question pairs from two snapshots, 89 with a changed answer | `data/processed/freshqa_staleness.json` | Vu et al. (2024), snapshots of 24 Nov 2025 and 21 Apr 2026, Apache-2.0 |
-| CostBench | Task routes and tool prices; the degradation is added in this work | `data/processed/costbench_routes.json` | Liu et al. (2026), built by `tools/costbench_routes.py` |
+| Dataset   | Used for                                                                         | File                                    | Source and license                                                                                                               |
+| --------- | -------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| GSM8K     | Maths word problems for the model-backed tools and checkers                      | `data/raw/gsm8k_test.jsonl`             | Cobbe et al. (2021), [openai/grade-school-math](https://github.com/openai/grade-school-math), MIT (`data/raw/GSM8K_LICENSE.txt`) |
+| FreshQA   | Stale knowledge: 574 question pairs from two snapshots, 89 with a changed answer | `data/processed/freshqa_staleness.json` | Vu et al. (2024), snapshots of 24 Nov 2025 and 21 Apr 2026, Apache-2.0                                                           |
+| CostBench | Task routes and tool prices; the degradation is added in this work               | `data/processed/costbench_routes.json`  | Liu et al. (2026), built by `tools/costbench_routes.py`                                                                          |
 
 Cached model answers and checker verdicts are in `data/processed/` (`llm_cache_*.json`, `d1_cache_*.json`,
 `d1_table.json` and `freshqa_judge_*.json`). `data/MANIFEST.json` records the SHA-256 hash of every data file.
