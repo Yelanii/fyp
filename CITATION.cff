@@ -6,6 +6,7 @@ authors:
   - family-names: Hanwella
     given-names: Yelani
     affiliation: "School of Computing, Informatics Institute of Technology (IIT), Colombo, Sri Lanka"
+doi: "10.5281/zenodo.24435388"
 repository-code: "https://github.com/Yelanii/when-to-pay-for-a-check"
 license: MIT
 version: 1.0.0

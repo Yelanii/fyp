@@ -1,5 +1,7 @@
 # When to Pay for a Check
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24435388.svg)](https://doi.org/10.5281/zenodo.24435388)
+
 Code, data and pre-registered experiments for the article
 
 > **When to Pay for a Check: Cost-Aware Checking and Switching for LLM Tool-Use Agents Under Silent Tool Degradation**
@@ -136,9 +138,18 @@ metadata of this repository.
 
 ## Citation
 
+To cite the article:
+
 ```
 Y. Hanwella, A. Aponso, M. Edirisooriya, C. Gunasena and L. Chandradeva, "When to Pay for a Check: Cost-Aware
 Checking and Switching for LLM Tool-Use Agents Under Silent Tool Degradation," manuscript, 2026.
+```
+
+To cite this code and data (archived on Zenodo):
+
+```
+Y. Hanwella, "When to Pay for a Check: Code, Data and Pre-Registered Experiments," Zenodo, version v1.0.0, 2026,
+doi: 10.5281/zenodo.24435388.
 ```
 
 ## Contact
