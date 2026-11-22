@@ -1,0 +1,22 @@
+{
+  "title": "When to Pay for a Check: code, data and pre-registered experiments",
+  "upload_type": "software",
+  "description": "Code, data, cached model outputs, pre-registrations and raw results for the article \"When to Pay for a Check: Cost-Aware Checking and Switching for LLM Tool-Use Agents Under Silent Tool Degradation\". It contains a simulator of priced tools that degrade silently, live tool services backed by small local models, a per-call rule that decides when to check, how to resolve a flag and when to switch tools, every baseline, the analysis code, and a script (reproduce_paper.py) that replays the reported experiments. Everything runs on a CPU. The source code is released under the MIT License. Data files keep the licences of their sources: GSM8K (MIT) and FreshQA-derived files (Apache-2.0). CostBench task routes are not included, because CostBench has no licence file; tools/costbench_routes.py rebuilds them from the public CostBench repository.",
+  "creators": [
+    {
+      "name": "Hanwella, Yelani",
+      "affiliation": "School of Computing, Informatics Institute of Technology (IIT), Colombo, Sri Lanka"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "large language model agents",
+    "tool use",
+    "verification",
+    "silent failure",
+    "cost-aware decision-making",
+    "change detection",
+    "pre-registration",
+    "reproducibility"
+  ]
+}

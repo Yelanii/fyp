@@ -47,6 +47,9 @@ SPECS = {
     "drift":    ("Gradual decline and checker drift (9600-9619)",   "drift_confirm_*",               "latest", "0.5",  "1"),
 }
 FIELDS = ("loss", "leak_rate", "wrong_rate", "fail_rate", "checks", "checks_per_task")
+# CostBench has no licence file, so its task routes are not distributed; build them first (docs/REPRODUCING.md).
+COSTBENCH_KEYS = ("cb15", "cb5", "fr11", "pfcb")
+COSTBENCH_ROUTES = os.path.join("data", "processed", "costbench_routes.json")
 
 
 def _replayer(key):
@@ -125,6 +128,8 @@ def _folder(pattern, which):
 
 def child(key, n):
     title, pattern, which = SPECS[key][:3]
+    if key in COSTBENCH_KEYS and not os.path.exists(COSTBENCH_ROUTES):
+        print(f"SKIPPED    {title}: needs {COSTBENCH_ROUTES}, built by tools/costbench_routes.py"); return 3
     folder = _folder(pattern, which)
     if folder is None:
         print(f"NOT RUN    {title}: no folder results/{pattern} yet"); return 2
@@ -153,9 +158,10 @@ def main():
     for k in keys:
         env = dict(os.environ, EREPLAN_FMAX=SPECS[k][3], EREPLAN_NETPV=SPECS[k][4])
         codes.append(subprocess.call([sys.executable, __file__, "--child", k, "--n", str(a.n)], env=env))
-    ok, missing = sum(c == 0 for c in codes), sum(c == 2 for c in codes)
-    ran = len(codes) - missing
+    ok, missing, skipped = sum(c == 0 for c in codes), sum(c == 2 for c in codes), sum(c == 3 for c in codes)
+    ran = len(codes) - missing - skipped
     print(f"\n{ok} of {ran} experiments reproduced exactly." + (f" {missing} not run yet." if missing else "") +
+          (f" {skipped} skipped until the CostBench routes are built (docs/REPRODUCING.md)." if skipped else "") +
           ("" if ok == ran else " For any DIFFERENT line, note your Python, numpy and scipy versions (python check_local.py)."))
     sys.exit(0 if ok == ran else 1)
 

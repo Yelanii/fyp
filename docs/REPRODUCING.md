@@ -14,6 +14,23 @@ Where a command needs an environment variable, set it first:
 | Windows PowerShell | `$env:EREPLAN_REPLAY = "1"` and then the command |
 | macOS or Linux | `EREPLAN_REPLAY=1 <command>` |
 
+## 0. Build the CostBench task routes (once)
+
+CostBench has no licence file, so its task routes are not distributed with this repository. Four experiments need
+them: CostBench at 15% and 5% check prices, CostBench with real-checker rates, and the prior fix on CostBench. Build
+them from the public CostBench repository at the commit used here:
+
+```
+git clone https://github.com/jiayujeff/costbench ../costbench
+git -C ../costbench checkout 6424069
+pip install pyyaml
+python -I tools/costbench_routes.py ../costbench
+python check_local.py
+```
+
+This takes a few seconds and writes `data/processed/costbench_routes.json`. `check_local.py` then compares the file
+with its SHA-256 hash in `data/MANIFEST.json`, which is the hash of the file used for every reported result.
+
 ## 1. Check every reported number at once
 
 ```
@@ -23,7 +40,8 @@ python reproduce_paper.py
 For each of the 24 experiments that run on the simulator, on CostBench or on cached live-tool answers, this re-runs a
 random sample of the saved runs with that experiment's own settings and compares loss, wrong answers kept, failed
 tasks and checks per task with the saved values. Every line should say `IDENTICAL`, and the last line should be
-`24 of 24 experiments reproduced exactly.` It needs no model and takes a few minutes.
+`24 of 24 experiments reproduced exactly.` (without step 0 it reports `20 of 20` and skips the four CostBench
+experiments). It needs no model and takes a few minutes.
 
 - `python reproduce_paper.py --n 40` checks a larger sample.
 - `python reproduce_paper.py --only d1 fr11` checks only some experiments; the keys are listed in the script.

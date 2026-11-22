@@ -3,3 +3,4 @@ scipy>=1.13
 matplotlib>=3.8
 pytest>=8
 sympy>=1.12    # only for tools/check_identifiability.py
+pyyaml>=6.0    # only for tools/costbench_routes.py

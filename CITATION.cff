@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "When to Pay for a Check: code, data and pre-registered experiments"
+type: software
+authors:
+  - family-names: Hanwella
+    given-names: Yelani
+    affiliation: "School of Computing, Informatics Institute of Technology (IIT), Colombo, Sri Lanka"
+repository-code: "https://github.com/Yelanii/when-to-pay-for-a-check"
+license: MIT
+version: 1.0.0
+keywords:
+  - large language model agents
+  - tool use
+  - verification
+  - silent failure
+  - cost-aware decision-making

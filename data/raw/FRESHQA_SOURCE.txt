@@ -1,0 +1,3 @@
+data/processed/freshqa_staleness.json is derived from FreshQA (Vu et al., "FreshLLMs: Refreshing Large Language Models With Search Engine Augmentation", Findings of ACL 2024), https://github.com/freshllms/freshqa, released under the Apache License 2.0 (FRESHQA_LICENSE.txt).
+
+Changes made: for each question, the first answer in the snapshots of 24 November 2025 and 21 April 2026 was taken, and each pair was labeled as changed or unchanged. The judge verdict files (data/processed/freshqa_judge_*.json) are model outputs on these pairs.

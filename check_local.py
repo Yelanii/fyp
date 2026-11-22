@@ -25,8 +25,16 @@ def data():
     man = json.load(open("data/MANIFEST.json"))
     for p, m in man.items():
         if not os.path.exists(p):
-            say(False, f"{p} is missing"); continue
-        same = hashlib.sha256(open(p, "rb").read()).hexdigest() == m["sha256"]
+            if p.endswith("costbench_routes.json"):            # not distributed: CostBench has no licence file
+                print(f"  NOTE  {p} is not included; build it with tools/costbench_routes.py (docs/REPRODUCING.md)")
+            else:
+                say(False, f"{p} is missing")
+            continue
+        raw = open(p, "rb").read()
+        # the manifest was written on Windows, where some text files had CRLF line endings; the same content with
+        # LF line endings counts as identical
+        crlf = raw.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        same = m["sha256"] in (hashlib.sha256(raw).hexdigest(), hashlib.sha256(crlf).hexdigest())
         # the LLM answer caches grow when you run models locally, so a different hash there is not an error
         if not same and "llm_cache_" in p:
             print(f"  NOTE  {p} differs from the packaged copy (normal if you have run the models since)")

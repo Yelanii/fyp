@@ -53,6 +53,8 @@ preregistration/    the plan of every experiment, committed before it was run
 docs/               how to reproduce each result
 reproduce_paper.py  replays a sample of every reported experiment and compares the numbers
 check_local.py      checks the data files, Python packages and Ollama models on this machine
+LICENSE             MIT License for the source code
+CITATION.cff        how to cite this repository
 ```
 
 The main modules of `ereplan/`:
@@ -94,8 +96,10 @@ python reproduce_paper.py      # replays every simulated and replayed experiment
 ```
 
 `reproduce_paper.py` re-runs a random sample of the saved runs of each experiment and compares every number with the
-saved value. It should end with `24 of 24 experiments reproduced exactly.` No model is needed, because every model
-answer used by the experiments is cached in `data/processed/`.
+saved value. No model is needed, because every model answer used by the experiments is cached in `data/processed/`.
+Four experiments use CostBench task routes, which are not distributed with this repository (see Data). Without them
+the script ends with `20 of 20 experiments reproduced exactly. 4 skipped`; after building them with one command
+([docs/REPRODUCING.md](docs/REPRODUCING.md), step 0) it ends with `24 of 24 experiments reproduced exactly.`
 
 To re-run complete experiments, see [docs/REPRODUCING.md](docs/REPRODUCING.md).
 
@@ -108,20 +112,27 @@ and Windows 11, with Python 3.13 and Ollama 0.40.16, and without a graphics proc
 
 ## Data
 
-| Dataset   | Used for                                                                         | File                                    | Source and license                                                                                                               |
-| --------- | -------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| GSM8K     | Maths word problems for the model-backed tools and checkers                      | `data/raw/gsm8k_test.jsonl`             | Cobbe et al. (2021), [openai/grade-school-math](https://github.com/openai/grade-school-math), MIT (`data/raw/GSM8K_LICENSE.txt`) |
-| FreshQA   | Stale knowledge: 574 question pairs from two snapshots, 89 with a changed answer | `data/processed/freshqa_staleness.json` | Vu et al. (2024), snapshots of 24 Nov 2025 and 21 Apr 2026, Apache-2.0                                                           |
-| CostBench | Task routes and tool prices; the degradation is added in this work               | `data/processed/costbench_routes.json`  | Liu et al. (2026), built by `tools/costbench_routes.py`                                                                          |
+| Dataset | Used for | File | Source and license |
+|---|---|---|---|
+| GSM8K | Maths word problems for the model-backed tools and checkers | `data/raw/gsm8k_test.jsonl` | Cobbe et al. (2021), [openai/grade-school-math](https://github.com/openai/grade-school-math), MIT (`data/raw/GSM8K_LICENSE.txt`) |
+| FreshQA | Stale knowledge: 574 question pairs from two snapshots, 89 with a changed answer | `data/processed/freshqa_staleness.json` | Vu et al. (2024), [freshllms/freshqa](https://github.com/freshllms/freshqa), snapshots of 24 Nov 2025 and 21 Apr 2026, Apache-2.0 (`data/raw/FRESHQA_LICENSE.txt`; changes in `data/raw/FRESHQA_SOURCE.txt`) |
+| CostBench | Task routes and tool prices; the degradation is added in this work | Not included: `tools/costbench_routes.py` builds `data/processed/costbench_routes.json` | Liu et al. (2026), [jiayujeff/costbench](https://github.com/jiayujeff/costbench), commit 6424069. The CostBench repository has no licence file, so the routes are not redistributed |
 
 Cached model answers and checker verdicts are in `data/processed/` (`llm_cache_*.json`, `d1_cache_*.json`,
-`d1_table.json` and `freshqa_judge_*.json`). `data/MANIFEST.json` records the SHA-256 hash of every data file.
+`d1_table.json` and `freshqa_judge_*.json`). `data/MANIFEST.json` records the SHA-256 hash of every data file,
+including the CostBench routes, so `python check_local.py` confirms that a rebuilt file is identical to the one used.
 
 ## Pre-registration
 
 Each experiment was planned in a file in [`preregistration/`](preregistration/README.md) and committed before it was
 run. Development and tuning used separate seeds, and each confirmatory test was run once. The commit history shows
 the order in which plans and results were added.
+
+## License
+
+The source code is released under the [MIT License](LICENSE). Data files keep the licences of their sources,
+listed in the Data section. [`CITATION.cff`](CITATION.cff) and [`.zenodo.json`](.zenodo.json) hold the citation and archive
+metadata of this repository.
 
 ## Citation
 
@@ -133,5 +144,5 @@ Checking and Switching for LLM Tool-Use Agents Under Silent Tool Degradation," m
 ## Contact
 
 Yelani Hanwella, School of Computing, Informatics Institute of Technology (IIT), Colombo, Sri Lanka
-(ymhanwella01@gmail.com). This work was carried out as a final-year project for the BSc (Hons) in Computer Science
+(yelani.20221523@iit.ac.lk). This work was carried out as a final-year project for the BSc (Hons) in Computer Science
 at IIT, in affiliation with the University of Westminster.
