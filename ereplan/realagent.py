@@ -610,7 +610,9 @@ def cmd_repeat(a):
             reflag_given_flag=float(nxt[prev].mean()) if prev.any() else None,
             flag_given_no_flag=float(nxt[~prev].mean()) if (~prev).any() else None,
             share_flagged_every_time=float(F.all(axis=1).mean()),
-            share_flagged_at_least_once=float(F.any(axis=1).mean()))
+            share_flagged_at_least_once=float(F.any(axis=1).mean()),
+            pairs_after_flag=int(prev.sum()), reflags=int(nxt[prev].sum()),
+            pairs_after_no_flag=int((~prev).sum()), flags_after_no_flag=int(nxt[~prev].sum()))
     out = os.path.join("results", f"repeat_{_safe(_judge_model(a))}_{time.strftime('%Y%m%d-%H%M%S')}.json")
     os.makedirs("results", exist_ok=True)
     json.dump(res, open(out, "w"), indent=1)
