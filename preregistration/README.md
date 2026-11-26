@@ -28,6 +28,7 @@ in these files give the scripts' location at the time they were written; the exp
 | `PREREGISTRATION_drift.md` | Gradual decline, and a checker whose error rates change during a run |
 | `PREREGISTRATION_core2x.md` | The published baselines given the rule's cross-check |
 | `PREREGISTRATION_persist_larger.md` | Whether larger local checkers (Llama 3.1 8B, Phi-4 Mini) repeat their false alarms |
+| `PREREGISTRATION_persist_api.md` | Whether an API-served 120B checker (gpt-oss-120b on Groq's free plan) repeats its false alarms |
 
 Original plans of the experiments re-run by the corrected suite:
 

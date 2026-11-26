@@ -19,7 +19,7 @@ Commands (Ollama must be running locally, e.g. `ollama pull qwen2.5:1.5b`):
 Use --model stub to test the whole pipeline without an LLM (gold plans from GSM8K's calculator
 annotations, and a SIMULATED judge). Stub results are pipeline checks only, never findings.
 """
-import argparse, ast, hashlib, json, math, operator, os, re, time, urllib.request, zlib
+import argparse, ast, hashlib, json, math, operator, os, re, time, urllib.error, urllib.request, zlib
 from collections import Counter
 import numpy as np
 
@@ -41,6 +41,16 @@ class LLM:
         self.digest = None
         self.replay = os.environ.get("EREPLAN_REPLAY") == "1"   # answer only from the saved cache, no Ollama
         self.misses = 0
+        # "groq:<id>" or "gemini:<id>" calls an API-served checker through the provider's OpenAI-compatible
+        # endpoint (free plans only; key in GROQ_API_KEY or GEMINI_API_KEY). Every answer is cached exactly as for
+        # Ollama, so runs replay without the API.
+        prov = model.split(":", 1)[0]
+        self.api = (prov, model.split(":", 1)[1]) if prov in API_PROVIDERS else None
+        if self.api:
+            env = API_PROVIDERS[prov]["key"]
+            if not self.replay and not os.environ.get(env):
+                raise SystemExit(f"Set {env} (free key from {API_PROVIDERS[prov]['keys_page']}) to call {model}")
+            return
         if model != "stub" and not self.replay:
             try:
                 info = _post("/api/show", {"name": model}, timeout=300)
@@ -57,6 +67,14 @@ class LLM:
         if self.replay:
             self.misses += 1
             return ""                     # not in the cache: treated as no answer (logged as a miss)
+        if self.api:
+            try:
+                text = _api_chat(*self.api, prompt, max_tokens, temperature, seed)
+            except BaseException:         # includes the SystemExit raised at the daily free limit
+                self.save()
+                raise
+            self.cache[key] = text
+            return text
         body = {"model": self.model, "prompt": prompt, "stream": False,
                 "options": {"temperature": temperature, "seed": seed, "num_predict": max_tokens} | ({"stop": stop} if stop else {})}
         try:
@@ -70,6 +88,69 @@ class LLM:
     def save(self):
         os.makedirs(OUT, exist_ok=True)
         json.dump(self.cache, open(self.path, "w"))
+
+
+API_PROVIDERS = {
+    "groq": dict(url="https://api.groq.com/openai/v1/chat/completions", key="GROQ_API_KEY", gap=2.2,
+                 keys_page="https://console.groq.com/keys"),
+    "gemini": dict(url="https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+                   key="GEMINI_API_KEY", gap=4.5, keys_page="https://aistudio.google.com/apikey"),
+}                         # gap: seconds between calls, to stay under each free plan's requests per minute
+_last_api_call = [0.0]
+
+
+def _api_chat(prov, model, prompt, max_tokens, temperature, seed, tries=6):
+    """One chat completion from an OpenAI-compatible provider. The checkers used are reasoning models, whose
+    thinking counts against the token limit, so each call allows at least 1,024 tokens with low reasoning effort;
+    the prompt is unchanged. A short rate-limit wait is slept through; the daily free limit stops the run,
+    keeping every answer obtained so far, so the same command can be run again after the limit resets."""
+    P = API_PROVIDERS[prov]
+    body = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": temperature,
+            "seed": seed, "max_completion_tokens": max(max_tokens, 1024), "reasoning_effort": "low"}
+    for i in range(tries):
+        wait = _last_api_call[0] + P["gap"] - time.time()
+        if wait > 0:
+            time.sleep(wait)
+        _last_api_call[0] = time.time()
+        req = urllib.request.Request(P["url"], data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json", "User-Agent": "ereplan",
+                                              "Authorization": f"Bearer {os.environ.get(P['key'], '')}"})
+        try:
+            out = json.loads(urllib.request.urlopen(req, timeout=120).read())
+            _record_api_meta(f"{prov}:{model}", out)
+            return out["choices"][0]["message"].get("content") or ""
+        except urllib.error.HTTPError as e:
+            msg = e.read()[:600].decode("utf-8", "replace")
+            if e.code == 429:
+                after = float(e.headers.get("retry-after") or 60)
+                daily = after > 120 or "day" in msg.lower()
+                if daily or i == tries - 1:
+                    raise SystemExit(f"{prov} free limit reached for {model}. Answers so far are saved; "
+                                     "run the same command again after the daily limit resets.")
+                print(f"  {prov} rate limit; waiting {after:.0f} s", flush=True)
+                time.sleep(after + 1)
+                continue
+            if e.code >= 500 and i < tries - 1:
+                time.sleep(30 * (i + 1))
+                continue
+            raise SystemExit(f"{prov} error {e.code}: {msg}")
+        except (urllib.error.URLError, TimeoutError) as e:
+            if i == tries - 1:
+                raise
+            print(f"  {prov} did not answer ({type(e).__name__}); retrying in {30 * (i + 1)} s", flush=True)
+            time.sleep(30 * (i + 1))
+    raise SystemExit(f"{prov}: too many retries")
+
+
+def _record_api_meta(model, out):
+    """Keep the served model id and system fingerprint of every distinct backend version seen (reproducibility)."""
+    path = os.path.join(OUT, f"api_meta_{_safe(model)}.json")
+    meta = json.load(open(path)) if os.path.exists(path) else {"model": model, "seen": []}
+    entry = {"model": out.get("model"), "system_fingerprint": out.get("system_fingerprint")}
+    if entry not in [{k: x.get(k) for k in entry} for x in meta["seen"]]:
+        meta["seen"].append(entry | {"first_seen": time.strftime("%Y-%m-%d %H:%M:%S")})
+        os.makedirs(OUT, exist_ok=True)
+        json.dump(meta, open(path, "w"), indent=1)
 
 
 def _safe(s):
