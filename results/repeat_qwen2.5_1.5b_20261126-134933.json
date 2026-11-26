@@ -1,0 +1,19 @@
+{
+ "planner": "qwen2.5:1.5b",
+ "judge_model": "qwen2.5:1.5b",
+ "k": 8,
+ "n_expressions": 276,
+ "by_temperature": {
+  "0.7": {
+   "false_alarm_rate": 0.1381340579710145,
+   "reflag_given_flag": 0.8796992481203008,
+   "flag_given_no_flag": 0.018607442977190875,
+   "share_flagged_every_time": 0.09782608695652174,
+   "share_flagged_at_least_once": 0.18115942028985507,
+   "pairs_after_flag": 266,
+   "reflags": 234,
+   "pairs_after_no_flag": 1666,
+   "flags_after_no_flag": 31
+  }
+ }
+}
