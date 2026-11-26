@@ -152,6 +152,9 @@ Y. Hanwella, "When to Pay for a Check: Code, Data and Pre-Registered Experiments
 doi: 10.5281/zenodo.24435387.
 ```
 
+This DOI always resolves to the latest version. The version that matches the article (31 experiments, 92 hypotheses)
+is release v1.1.0, archived as doi: 10.5281/zenodo.24565314 (commit 79400ee).
+
 ## Contact
 
 Yelani Hanwella, School of Computing, Informatics Institute of Technology (IIT), Colombo, Sri Lanka
