@@ -29,7 +29,7 @@ Everything runs on a CPU. No GPU, no API key and no model training are needed.
 
 ## Main findings
 
-- Small LLM checkers re-flagged 82.5 to 92% of their own false alarms, even when sampling. This persistence makes
+- Small LLM checkers (1.5B to 8B parameters) re-flagged 68 to 92% of their own false alarms, even when sampling. This persistence makes
   check-and-retry more expensive. On live model-backed tools, retrying a flagged answer failed 21% of tasks,
   against 5% when the flag was resolved by cross-checking on a second tool.
 - Cross-checking worked when the second model was clearly more accurate; a follow-up pointed to accuracy rather
@@ -40,7 +40,7 @@ Everything runs on a CPU. No GPU, no API key and no model training are needed.
 - The rule stayed within 1.6% of the same rule given the checker's true error rates on three testbeds, including
   under gradual degradation and a changing checker. On live tools it needed a labeled calibration to beat never
   checking, and cross-checking every call was cheaper still.
-- Twenty-nine experiments were pre-registered: 67 of 87 hypotheses were confirmed, and every outcome is reported.
+- Thirty-one experiments were pre-registered: 72 of 92 hypotheses were confirmed, and every outcome is reported.
 
 ## Repository layout
 
@@ -52,7 +52,7 @@ tests/              unit tests
 data/               benchmark data and cached model answers
 results/            one folder per run, with report.md and the raw rows (see results/README.md)
 preregistration/    the plan of every experiment, committed before it was run
-docs/               how to reproduce each result, and the article's supplementary material (PDF)
+docs/               how to reproduce each result
 reproduce_paper.py  replays a sample of every reported experiment and compares the numbers
 check_local.py      checks the data files, Python packages and Ollama models on this machine
 LICENSE             MIT License for the source code
@@ -100,12 +100,10 @@ python reproduce_paper.py      # replays every simulated and replayed experiment
 `reproduce_paper.py` re-runs a random sample of the saved runs of each experiment and compares every number with the
 saved value. No model is needed, because every model answer used by the experiments is cached in `data/processed/`.
 Four experiments use CostBench task routes, which are not distributed with this repository (see Data). Without them
-the script ends with `20 of 20 experiments reproduced exactly. 4 skipped`; after building them with one command
-([docs/REPRODUCING.md](docs/REPRODUCING.md), step 0) it ends with `24 of 24 experiments reproduced exactly.`
+the script ends with `21 of 21 experiments reproduced exactly. 4 skipped`; after building them with one command
+([docs/REPRODUCING.md](docs/REPRODUCING.md), step 0) it ends with `25 of 25 experiments reproduced exactly.`
 
 To re-run complete experiments, see [docs/REPRODUCING.md](docs/REPRODUCING.md).
-
-The article's supplementary material (proofs, the full specification of the rule, the prompts, additional results and the record of every pre-registered experiment) is [docs/supplementary_material.pdf](docs/supplementary_material.pdf).
 
 ## Models
 

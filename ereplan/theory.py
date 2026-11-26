@@ -18,7 +18,7 @@ Policies on the step:
        Two wrong outputs never agree.
 
 All three are computed exactly by a forward pass over (attempt b, verdict state I_b); the derivation is in the
-Supplementary Material of the paper.
+Appendix of the paper.
 """
 from dataclasses import dataclass, replace
 

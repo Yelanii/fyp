@@ -26,6 +26,8 @@ in these files give the scripts' location at the time they were written; the exp
 | `PREREGISTRATION_priorfix.md` | Why the learned false-alarm rate is biased (shrinkage to the prior), and a corrected prior: simulator, live tools and CostBench |
 | `PREREGISTRATION_d1power.md` | Live tools on 200 seeds, with the sample size set by a power analysis |
 | `PREREGISTRATION_drift.md` | Gradual decline, and a checker whose error rates change during a run |
+| `PREREGISTRATION_core2x.md` | The published baselines given the rule's cross-check |
+| `PREREGISTRATION_persist_larger.md` | Whether larger local checkers (Llama 3.1 8B, Phi-4 Mini) repeat their false alarms |
 
 Original plans of the experiments re-run by the corrected suite:
 

@@ -45,6 +45,7 @@ SPECS = {
     "pfcb":     ("Prior fix, CostBench (9500-9517)",                "priorfix_cb_confirm_*",         "latest", "0.95", "1"),
     "d1power":  ("Live tools, 200 seeds (7400-7599)",               "d1power_confirm_*",             "latest", "0.5",  "1"),
     "drift":    ("Gradual decline and checker drift (9600-9619)",   "drift_confirm_*",               "latest", "0.5",  "1"),
+    "core2x":   ("Published methods with the cross-check (9700-9719)", "core2x_confirm_*",           "latest", "0.5",  "1"),
 }
 FIELDS = ("loss", "leak_rate", "wrong_rate", "fail_rate", "checks", "checks_per_task")
 # CostBench has no licence file, so its task routes are not distributed; build them first (docs/REPRODUCING.md).
@@ -112,6 +113,11 @@ def _replayer(key):
     if key == "drift":
         import run_drift as m
         return lambda r: m.job((r["part"], r["strategy"], tuple(r["cond"]), r["seed"]))
+    if key == "core2x":
+        import run_core2x as m                  # registers the cross-check variants
+        from ereplan import core2_exp
+        S = m.strategies()
+        return lambda r: core2_exp._job((r["strategy"], *S[r["strategy"]], (r["drop"], r["q"], r["leak_mult"], r["f"], r["pi"]), r["seed"]))
     if key == "d1power":
         import run_d1power as m                 # registers v5_cal and v5_fix exactly as in the run
         m._init()

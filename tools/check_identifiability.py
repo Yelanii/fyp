@@ -1,4 +1,4 @@
-"""Proposition S1 of the Supplementary Material (identifiability): rank of the Jacobian of the five cross-check
+"""Proposition 5 of the paper (identifiability): rank of the Jacobian of the five cross-check
 event probabilities with respect to (q, f, sigma).
 
 Run from the repository root:  python tools/check_identifiability.py   (needs sympy)"""

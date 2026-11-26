@@ -1,6 +1,6 @@
 """Bias of the label-free (q, f) estimates when shared mistakes occur (sigma > 0) but sigma = 0 is assumed.
 
-Reproduces Table "Limit Shift of the Learned Rates" (Proposition S2 of the Supplementary Material) and the
+Reproduces the bias values after Proposition 6 of the paper and the
 information argument about q in the paper.
 It finds the exact limit of the misspecified estimate: the (q, f) that minimises the Kullback-Leibler divergence
 from the true distribution of the five events on a checked call to the sigma = 0 model.

@@ -37,10 +37,10 @@ with its SHA-256 hash in `data/MANIFEST.json`, which is the hash of the file use
 python reproduce_paper.py
 ```
 
-For each of the 24 experiments that run on the simulator, on CostBench or on cached live-tool answers, this re-runs a
+For each of the 25 experiments that run on the simulator, on CostBench or on cached live-tool answers, this re-runs a
 random sample of the saved runs with that experiment's own settings and compares loss, wrong answers kept, failed
 tasks and checks per task with the saved values. Every line should say `IDENTICAL`, and the last line should be
-`24 of 24 experiments reproduced exactly.` (without step 0 it reports `20 of 20` and skips the four CostBench
+`25 of 25 experiments reproduced exactly.` (without step 0 it reports `21 of 21` and skips the four CostBench
 experiments). It needs no model and takes a few minutes.
 
 - `python reproduce_paper.py --n 40` checks a larger sample.
@@ -76,6 +76,7 @@ The sections below re-run whole experiments from the start.
 | Prior fix, CostBench | `priorfix` | 9500-9517 | `python experiments/run_priorfix_cb.py confirm` | `priorfix_cb_confirm_20261121-153037` |
 | Live tools, 200 seeds | `d1power` | 7400-7599 | `python experiments/run_d1power.py confirm` | `d1power_confirm_20261121-175005` |
 | Gradual decline, changing checker | `drift` | 9600-9619 | `python experiments/run_drift.py confirm` | `drift_confirm_20261121-195725` |
+| Published methods given the cross-check | `core2x` | 9700-9719 | `python experiments/run_core2x.py confirm` | `core2x_confirm_20261126-144830` |
 
 Pre-registration `x` is the file `preregistration/PREREGISTRATION_x.md`, and every saved results folder is in
 `results/`.
@@ -102,6 +103,7 @@ it is produced, so a second run reads the saved answers instead of calling the m
 | A1-A3 on real tools (Study M) | `realtools` | GSM8K problems 1-200; 574 FreshQA pairs | `python experiments/measure_assumptions.py confirm` | `assumptions_confirm_20261118-131727` |
 | A1 and A2 on new problems (Study M2) | `assumptions_ext` | GSM8K problems 201-500 | `python experiments/measure_assumptions_ext.py confirm` | `assumptions_ext_confirm_20261119-234258` |
 | Model family or accuracy (Study F) | `family` | GSM8K problems 201-500 | `python experiments/measure_family.py confirm` | `family_confirm_20261121-223532` |
+| Do larger checkers repeat their false alarms? | `persist_larger` | 276 correct steps, 8 asks each at temperature 0.7 | `python -m ereplan.realagent repeat --model qwen2.5:1.5b --judge-model <checker> --cal-n 300 --k 8 --temps 0.7`, for `llama3.1:8b` and `phi4-mini` (and `qwen2.5:3b`, `qwen2.5:1.5b` for comparison) | `repeat_<checker>_<run id>.json` |
 
 The two GSM8K agent experiments (`ereplan.realagent`) can be replayed from the saved answers without Ollama by setting
 `EREPLAN_REPLAY=1`.
@@ -113,6 +115,8 @@ The two GSM8K agent experiments (`ereplan.realagent`) can be replayed from the s
 | Exact losses of checking against the simulator | `python -m ereplan.theory_check` |
 | Identifiability of the checker's error rates (Proposition S1) | `python tools/check_identifiability.py` |
 | Bias of the label-free estimates under shared mistakes (Proposition S2) | `python tools/sigma_bias.py` |
+| Live tools: intervals from resampling the problems (follow-up, not pre-registered) | `python tools/live_resample.py problems` |
+| Live tools: cheapest policy over the loss weights (follow-up, not pre-registered) | `python tools/live_resample.py weights` |
 
 ## 5. Development seeds
 
