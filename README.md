@@ -52,7 +52,7 @@ tests/              unit tests
 data/               benchmark data and cached model answers
 results/            one folder per run, with report.md and the raw rows (see results/README.md)
 preregistration/    the plan of every experiment, committed before it was run
-docs/               how to reproduce each result
+docs/               how to reproduce each result, and the article's supplementary material (PDF)
 reproduce_paper.py  replays a sample of every reported experiment and compares the numbers
 check_local.py      checks the data files, Python packages and Ollama models on this machine
 LICENSE             MIT License for the source code
@@ -104,6 +104,8 @@ the script ends with `20 of 20 experiments reproduced exactly. 4 skipped`; after
 ([docs/REPRODUCING.md](docs/REPRODUCING.md), step 0) it ends with `24 of 24 experiments reproduced exactly.`
 
 To re-run complete experiments, see [docs/REPRODUCING.md](docs/REPRODUCING.md).
+
+The article's supplementary material (proofs, the full specification of the rule, the prompts, additional results and the record of every pre-registered experiment) is [docs/supplementary_material.pdf](docs/supplementary_material.pdf).
 
 ## Models
 
